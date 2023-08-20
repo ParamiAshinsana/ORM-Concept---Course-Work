@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="791.0" prefWidth="780.0" style="-fx-background-color: #74b9ff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.StudentLoginFormController">
+   <children>
+      <VBox layoutX="39.0" layoutY="349.0" opacity="0.68" prefHeight="421.0" prefWidth="704.0" style="-fx-background-color: #54a0ff;" styleClass="LoginWindowImage" stylesheets="@../css/stylesheet_css.css" />
+      <ImageView fitHeight="53.0" fitWidth="51.0" layoutX="178.0" layoutY="461.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Student.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="50.0" layoutX="183.0" layoutY="559.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Password.png" />
+         </image>
+      </ImageView>
+      <PasswordField fx:id="txtPassword" layoutX="295.0" layoutY="560.0" prefHeight="40.0" prefWidth="335.0" promptText="Password" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" />
+      <JFXButton layoutX="184.0" layoutY="671.0" onAction="#BtnLoginOnAction" prefHeight="53.0" prefWidth="163.0" style="-fx-background-color: white;" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" text="Login" textFill="#74b9ff">
+         <font>
+            <Font name="Arial Bold Italic" size="29.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="442.0" layoutY="675.0" onMouseClicked="#RegisterOnMouseClicked" prefHeight="40.0" prefWidth="156.0" text="Register" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold Italic" size="32.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="155.0" fitWidth="197.0" layoutX="340.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="197.0" fitWidth="335.0" layoutX="42.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="141.0" fitWidth="224.0" layoutX="495.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/3.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="318.0" layoutY="-13.0" prefHeight="113.0" prefWidth="176.0" text="D24">
+         <font>
+            <Font name="Corbel Bold Italic" size="96.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Label layoutX="185.0" layoutY="57.0" prefHeight="113.0" prefWidth="440.0" text="Hostel - Colombo">
+         <font>
+            <Font name="Corbel Bold Italic" size="60.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Label layoutX="317.0" layoutY="361.0" prefHeight="51.0" prefWidth="184.0" text="Login  Form" textFill="#f5f2f2">
+         <font>
+            <Font name="Monotype Corsiva" size="35.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <JFXComboBox fx:id="cBoxUserProfile" layoutX="297.0" layoutY="469.0" prefHeight="40.0" prefWidth="335.0" promptText="User Name" style="-fx-background-color: white;" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" />
+   </children>
+</AnchorPane>
