@@ -49,7 +49,7 @@
 .TabsBoarders{
     -fx-border-radius: 20px 20px 0px 0px;
     -fx-background-radius: 20px 20px 0px 0px;
-    -fx-background-color: linear-gradient(to top,#48dbfb , #48dbfb);
+    -fx-background-color: linear-gradient(to top, #74b9ff ,  #74b9ff);
 }
 .TabColours{
     -fx-background-color: linear-gradient(to left,#2A2E34,#FFFF33);
@@ -126,5 +126,9 @@
 }
 
 .HDashBoard{
-    -fx-background-color: linear-gradient(to left,#7AD7F0 , #92DFF3 , #B7E9F7 , #DBF3FA);
+    -fx-background-color: linear-gradient(to bottom, #59a8f8, #74b9ff , #84bef8 , #97c8f8 ,#c1ddf8 ,#DBF3FA);
+}
+.StakePane{
+    -fx-background-radius: 75px 75px 0px 0px;
+    -fx-border-radius: 75px 75px 0px 0px;
 }
