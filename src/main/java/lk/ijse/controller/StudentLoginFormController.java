@@ -18,7 +18,7 @@ public class StudentLoginFormController {
 
     public void BtnLoginOnAction(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/student_form.fxml"))));
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/dashboard_form.fxml"))));
         stage.setTitle("Student Form");
         stage.show();
         rootLogin.getScene().getWindow().hide();

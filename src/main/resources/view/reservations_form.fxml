@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="rootReservation" prefHeight="660.0" prefWidth="1145.0" style="-fx-background-color: white;" styleClass="StakePane" stylesheets="@../css/stylesheet_css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ReservationsFormController">
+   <children>
+      <Label layoutX="455.0" layoutY="221.0" prefHeight="46.0" prefWidth="90.0" text="RESER" />
+   </children>
+</AnchorPane>

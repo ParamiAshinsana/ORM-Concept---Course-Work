@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootDashboard" prefHeight="782.0" prefWidth="1539.0" styleClass="HDashBoard" stylesheets="@../css/stylesheet_css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.StudentFormController">
+<AnchorPane fx:id="rootDashboard" prefHeight="782.0" prefWidth="1539.0" styleClass="HDashBoard" stylesheets="@../css/stylesheet_css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.DashboardFormController">
    <children>
       <AnchorPane layoutX="15.0" layoutY="100.0" opacity="0.26" prefHeight="666.0" prefWidth="330.0" style="-fx-background-color: black;" styleClass="TabPane" stylesheets="@../css/stylesheet_css.css" />
       <JFXButton fx:id="btnReservations" graphicTextGap="40.0" layoutX="32.0" layoutY="502.0" onAction="#btnReservationsOnAction" prefHeight="70.0" prefWidth="300.0" styleClass="TabsBoarders" stylesheets="@../css/stylesheet_css.css" text="RESERVATIONS" textFill="WHITE">
