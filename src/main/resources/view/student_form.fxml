@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootDashboard" prefHeight="782.0" prefWidth="1539.0" styleClass="HDashBoard" stylesheets="@../css/stylesheet_css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.StudentFormController">
+   <children>
+      <AnchorPane layoutX="15.0" layoutY="100.0" opacity="0.26" prefHeight="605.0" prefWidth="330.0" style="-fx-background-color: black;" styleClass="TabPane" stylesheets="@../css/stylesheet_css.css" />
+      <JFXButton fx:id="btnReservations" graphicTextGap="40.0" layoutX="32.0" layoutY="502.0" onAction="#btnReservationsOnAction" prefHeight="70.0" prefWidth="300.0" styleClass="TabsBoarders" stylesheets="@../css/stylesheet_css.css" text="RESERVATIONS" textFill="WHITE">
+         <font>
+            <Font name="Trebuchet MS Bold Italic" size="22.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="57.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/Reservation.png" />
+               </image>
+               <effect>
+                  <Glow level="0.61" />
+               </effect>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnHome" graphicTextGap="62.0" layoutX="30.0" layoutY="149.0" onAction="#btnHomeOnAction" prefHeight="70.0" prefWidth="300.0" styleClass="TabsBoarders" stylesheets="@../css/stylesheet_css.css" text="HOME" textFill="WHITE">
+         <font>
+            <Font name="Trebuchet MS Bold Italic" size="22.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="77.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/Home.png" />
+               </image>
+               <effect>
+                  <Glow level="0.61" />
+               </effect>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnStudents" graphicTextGap="45.0" layoutX="29.0" layoutY="268.0" onAction="#btnStudentsOnAction" prefHeight="70.0" prefWidth="300.0" styleClass="TabsBoarders" stylesheets="@../css/stylesheet_css.css" text="STUDENTS" textFill="WHITE">
+         <font>
+            <Font name="Trebuchet MS Bold Italic" size="22.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="57.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/Human.png" />
+               </image>
+               <effect>
+                  <Glow level="0.61" />
+               </effect>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnRooms" graphicTextGap="82.0" layoutX="30.0" layoutY="384.0" onAction="#btnRoomsOnAction" prefHeight="70.0" prefWidth="300.0" styleClass="TabsBoarders" stylesheets="@../css/stylesheet_css.css" text="ROOMS" textFill="WHITE">
+         <font>
+            <Font name="Trebuchet MS Bold Italic" size="22.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="63.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/Rooms.png" />
+               </image>
+               <effect>
+                  <Glow level="0.61" />
+               </effect>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnPayments" graphicTextGap="54.0" layoutX="30.0" layoutY="620.0" onAction="#btnPaymentsOnAction" prefHeight="70.0" prefWidth="300.0" styleClass="TabsBoarders" stylesheets="@../css/stylesheet_css.css" text="PAYMENTS" textFill="WHITE">
+         <font>
+            <Font name="Trebuchet MS Bold Italic" size="22.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="57.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/Payment.png" />
+               </image>
+               <effect>
+                  <Glow level="0.61" />
+               </effect>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <ImageView fitHeight="80.0" fitWidth="86.0" layoutX="258.0" layoutY="698.0" onMouseClicked="#logoutOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Logout.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

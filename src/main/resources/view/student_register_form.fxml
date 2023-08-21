@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="593.0" prefWidth="750.0" style="-fx-background-color: #74b9ff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.StudentRegisterFormController">
+<AnchorPane fx:id="rootRegister" prefHeight="545.0" prefWidth="750.0" style="-fx-background-color: #74b9ff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.StudentRegisterFormController">
    <children>
-      <VBox layoutX="22.0" layoutY="131.0" opacity="0.68" prefHeight="421.0" prefWidth="704.0" style="-fx-background-color: #54a0ff;" styleClass="LoginWindowImage" stylesheets="@../css/stylesheet_css.css" />
+      <VBox layoutX="22.0" layoutY="135.0" opacity="0.68" prefHeight="373.0" prefWidth="704.0" style="-fx-background-color: #54a0ff;" styleClass="LoginWindowImage" stylesheets="@../css/stylesheet_css.css" />
       <Label layoutX="258.0" layoutY="38.0" prefHeight="51.0" prefWidth="239.0" text="Register  Form" textFill="#f5f2f2">
          <font>
             <Font name="Monotype Corsiva" size="45.0" />
@@ -23,14 +23,14 @@
             <DropShadow />
          </effect>
       </Label>
-      <PasswordField fx:id="txtPassword" layoutX="213.0" layoutY="313.0" prefHeight="51.0" prefWidth="335.0" promptText="Password" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" />
-      <JFXTextField fx:id="txtUser" layoutX="216.0" layoutY="229.0" prefHeight="51.0" prefWidth="335.0" promptText="User Name" style="-fx-background-color: white;" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" />
-      <JFXButton layoutX="205.0" layoutY="432.0" onAction="#BtnRegisterOnAction" prefHeight="53.0" prefWidth="163.0" style="-fx-background-color: white;" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" text="Register" textFill="#74b9ff">
+      <PasswordField fx:id="txtPassword" layoutX="213.0" layoutY="286.0" prefHeight="51.0" prefWidth="335.0" promptText="Password" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" />
+      <JFXTextField fx:id="txtUser" layoutX="216.0" layoutY="197.0" prefHeight="51.0" prefWidth="335.0" promptText="User Name" style="-fx-background-color: white;" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" />
+      <JFXButton layoutX="188.0" layoutY="405.0" onAction="#BtnRegisterOnAction" prefHeight="53.0" prefWidth="163.0" style="-fx-background-color: white;" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" text="Register" textFill="#74b9ff">
          <font>
             <Font name="Arial Bold Italic" size="29.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="74.0" fitWidth="89.0" layoutX="463.0" layoutY="423.0" onMouseClicked="#backOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="53.0" fitWidth="63.0" layoutX="463.0" layoutY="406.0" onMouseClicked="#backOnMouseClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/Back.png" />
          </image>

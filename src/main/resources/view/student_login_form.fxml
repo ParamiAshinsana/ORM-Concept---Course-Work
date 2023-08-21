@@ -12,36 +12,36 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="791.0" prefWidth="780.0" style="-fx-background-color: #74b9ff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.StudentLoginFormController">
+<AnchorPane fx:id="rootLogin" prefHeight="681.0" prefWidth="780.0" style="-fx-background-color: #74b9ff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.StudentLoginFormController">
    <children>
-      <VBox layoutX="39.0" layoutY="349.0" opacity="0.68" prefHeight="421.0" prefWidth="704.0" style="-fx-background-color: #54a0ff;" styleClass="LoginWindowImage" stylesheets="@../css/stylesheet_css.css" />
-      <ImageView fitHeight="53.0" fitWidth="51.0" layoutX="178.0" layoutY="461.0" pickOnBounds="true" preserveRatio="true">
+      <VBox layoutX="39.0" layoutY="286.0" opacity="0.68" prefHeight="358.0" prefWidth="704.0" style="-fx-background-color: #54a0ff;" styleClass="LoginWindowImage" stylesheets="@../css/stylesheet_css.css" />
+      <ImageView fitHeight="53.0" fitWidth="51.0" layoutX="178.0" layoutY="384.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/Student.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="50.0" layoutX="183.0" layoutY="559.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="50.0" layoutX="183.0" layoutY="465.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/Password.png" />
          </image>
       </ImageView>
-      <PasswordField fx:id="txtPassword" layoutX="295.0" layoutY="560.0" prefHeight="40.0" prefWidth="335.0" promptText="Password" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" />
-      <JFXButton layoutX="184.0" layoutY="671.0" onAction="#BtnLoginOnAction" prefHeight="53.0" prefWidth="163.0" style="-fx-background-color: white;" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" text="Login" textFill="#74b9ff">
+      <PasswordField fx:id="txtPassword" layoutX="295.0" layoutY="464.0" prefHeight="40.0" prefWidth="335.0" promptText="Password" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" />
+      <JFXButton layoutX="212.0" layoutY="554.0" onAction="#BtnLoginOnAction" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: white;" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" text="Login" textFill="#74b9ff">
          <font>
-            <Font name="Arial Bold Italic" size="29.0" />
+            <Font name="Arial Bold Italic" size="24.0" />
          </font>
       </JFXButton>
-      <Label layoutX="442.0" layoutY="675.0" onMouseClicked="#RegisterOnMouseClicked" prefHeight="40.0" prefWidth="156.0" text="Register" textFill="WHITE">
+      <Label layoutX="442.0" layoutY="557.0" onMouseClicked="#RegisterOnMouseClicked" prefHeight="40.0" prefWidth="156.0" text="Register" textFill="WHITE">
          <font>
-            <Font name="Arial Bold Italic" size="32.0" />
+            <Font name="Arial Bold Italic" size="24.0" />
          </font>
       </Label>
-      <ImageView fitHeight="155.0" fitWidth="197.0" layoutX="340.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="141.0" fitWidth="176.0" layoutX="340.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/1.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="197.0" fitWidth="335.0" layoutX="42.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="162.0" fitWidth="305.0" layoutX="42.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/2.png" />
          </image>
@@ -67,7 +67,7 @@
             <Glow />
          </effect>
       </Label>
-      <Label layoutX="317.0" layoutY="361.0" prefHeight="51.0" prefWidth="184.0" text="Login  Form" textFill="#f5f2f2">
+      <Label layoutX="317.0" layoutY="296.0" prefHeight="51.0" prefWidth="184.0" text="Login  Form" textFill="#f5f2f2">
          <font>
             <Font name="Monotype Corsiva" size="35.0" />
          </font>
@@ -75,6 +75,6 @@
             <DropShadow />
          </effect>
       </Label>
-      <JFXComboBox fx:id="cBoxUserProfile" layoutX="297.0" layoutY="469.0" prefHeight="40.0" prefWidth="335.0" promptText="User Name" style="-fx-background-color: white;" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" />
+      <JFXComboBox fx:id="cBoxUserProfile" layoutX="297.0" layoutY="386.0" prefHeight="40.0" prefWidth="335.0" promptText="User Name" style="-fx-background-color: white;" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" />
    </children>
 </AnchorPane>
