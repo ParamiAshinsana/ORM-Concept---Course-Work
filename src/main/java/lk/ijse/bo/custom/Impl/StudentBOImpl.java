@@ -7,28 +7,29 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class StudentBOImpl implements StudentBO {
+
     @Override
-    public ArrayList<StudentDTO> getAllCustomers() throws SQLException, ClassNotFoundException {
+    public ArrayList<StudentDTO> getAllStudents() throws SQLException, ClassNotFoundException {
         return null;
     }
 
     @Override
-    public boolean addCustomers(StudentDTO dto) throws SQLException, ClassNotFoundException {
+    public boolean addStudents(StudentDTO dto) throws SQLException, ClassNotFoundException {
         return false;
     }
 
     @Override
-    public boolean updateCustomers(StudentDTO dto) throws SQLException, ClassNotFoundException {
+    public boolean updateStudents(StudentDTO dto) throws SQLException, ClassNotFoundException {
         return false;
     }
 
     @Override
-    public boolean deleteCustomers(String id) throws SQLException, ClassNotFoundException {
+    public boolean deleteStudents(String id) throws SQLException, ClassNotFoundException {
         return false;
     }
 
     @Override
-    public String generateNewCustomersID() throws SQLException, ClassNotFoundException {
+    public String generateNewStudentsID() throws SQLException, ClassNotFoundException {
         return null;
     }
 }
