@@ -1,6 +1,6 @@
-package lk.ijse.bo.Custom.Impl;
+package lk.ijse.bo.custom.Impl;
 
-import lk.ijse.bo.Custom.StudentBO;
+import lk.ijse.bo.custom.StudentBO;
 import lk.ijse.dto.StudentDTO;
 
 import java.sql.SQLException;
