@@ -1,5 +1,7 @@
 package lk.ijse.bo;
 
+import lk.ijse.bo.custom.Impl.StudentBOImpl;
+
 public class BOFactory {
     private static BOFactory boFactory;
     private BOFactory(){
