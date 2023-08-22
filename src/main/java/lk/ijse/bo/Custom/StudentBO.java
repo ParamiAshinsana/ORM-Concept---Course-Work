@@ -1,4 +1,4 @@
-package lk.ijse.bo.custom;
+package lk.ijse.bo.Custom;
 
 import lk.ijse.bo.SuperBO;
 import lk.ijse.dto.StudentDTO;
