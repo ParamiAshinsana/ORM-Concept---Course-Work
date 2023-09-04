@@ -1,15 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DisplacementMap?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.FloatMap?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootStudent" prefHeight="660.0" prefWidth="1145.0" style="-fx-background-color: red;" styleClass="StakePane" stylesheets="@../css/stylesheet_css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.StudentsFormController">
+<AnchorPane fx:id="rootStudent" prefHeight="660.0" prefWidth="1145.0" style="-fx-background-color: white;" styleClass="StakePane" stylesheets="@../css/stylesheet_css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.StudentsFormController">
    <children>
-      <Label layoutX="379.0" layoutY="181.0" prefHeight="35.0" prefWidth="216.0" text="STUDENT">
+      <Label layoutX="357.0" layoutY="9.0" prefHeight="64.0" prefWidth="484.0" text="MANAGE  STUDENTS" textFill="#54a0ff">
          <font>
-            <Font size="37.0" />
+            <Font name="Garamond Italic" size="44.0" />
          </font>
+         <effect>
+            <Blend />
+         </effect>
       </Label>
+      <TableView layoutX="16.0" layoutY="381.0" prefHeight="270.0" prefWidth="1111.0">
+        <columns>
+          <TableColumn prefWidth="145.0" text="C1" />
+          <TableColumn prefWidth="230.0" text="C2" />
+            <TableColumn prefWidth="203.0" text="C2" />
+            <TableColumn prefWidth="193.0" text="C2" />
+            <TableColumn prefWidth="165.0" text="C2" />
+            <TableColumn prefWidth="173.0" text="C2" />
+        </columns>
+         <effect>
+            <DisplacementMap>
+               <mapData>
+                  <FloatMap />
+               </mapData>
+               <input>
+                  <DropShadow color="#2f76cd" height="30.33" radius="15.634999999999998" spread="0.4" width="34.21" />
+               </input>
+            </DisplacementMap>
+         </effect>
+      </TableView>
    </children>
 </AnchorPane>

@@ -94,7 +94,7 @@
             <Image url="@../img/Lo.png" />
          </image>
       </ImageView>
-      <StackPane fx:id="controllarea" layoutX="374.0" layoutY="104.0" opacity="0.5" prefHeight="660.0" prefWidth="1145.0" style="-fx-background-color: white;" styleClass="StakePane" stylesheets="@../css/stylesheet_css.css" />
+      <StackPane fx:id="controllarea" layoutX="374.0" layoutY="104.0" opacity="0.61" prefHeight="660.0" prefWidth="1145.0" style="-fx-background-color: white;" styleClass="StakePane" stylesheets="@../css/stylesheet_css.css" />
       <TableView layoutX="1010.0" layoutY="182.0" prefHeight="200.0" prefWidth="200.0">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />

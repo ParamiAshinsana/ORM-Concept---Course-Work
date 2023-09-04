@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootRoom" prefHeight="660.0" prefWidth="1145.0" style="-fx-background-color: blue;" styleClass="StakePane" stylesheets="@../css/stylesheet_css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.RoomsFormController">
+<AnchorPane fx:id="rootRoom" prefHeight="660.0" prefWidth="1145.0" style="-fx-background-color: white;" styleClass="StakePane" stylesheets="@../css/stylesheet_css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.RoomsFormController">
    <children>
-      <Label layoutX="426.0" layoutY="195.0" prefHeight="57.0" prefWidth="127.0" text="ROOM" />
+      <Label layoutX="370.0" layoutY="10.0" prefHeight="64.0" prefWidth="484.0" text="MANAGE  ROOMS" textFill="#54a0ff">
+         <font>
+            <Font name="Garamond Italic" size="44.0" />
+         </font>
+         <effect>
+            <Blend />
+         </effect>
+      </Label>
    </children>
 </AnchorPane>
