@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DisplacementMap?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.FloatMap?>
@@ -40,5 +44,59 @@
             </DisplacementMap>
          </effect>
       </TableView>
+      <Label layoutX="44.0" layoutY="131.0" prefHeight="42.0" prefWidth="102.0" text="Student ID :">
+         <font>
+            <Font name="Tahoma Bold" size="15.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-1.0" contrast="1.0" hue="1.0" saturation="1.0" />
+         </effect>
+      </Label>
+      <Label layoutX="45.0" layoutY="213.0" prefHeight="42.0" prefWidth="102.0" text="Address  :">
+         <font>
+            <Font name="Tahoma Bold" size="15.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-1.0" contrast="1.0" hue="1.0" saturation="1.0" />
+         </effect>
+      </Label>
+      <Label layoutX="438.0" layoutY="216.0" prefHeight="42.0" prefWidth="102.0" text="Contact  :">
+         <font>
+            <Font name="Tahoma Bold" size="15.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-1.0" contrast="1.0" hue="1.0" saturation="1.0" />
+         </effect>
+      </Label>
+      <Label layoutX="435.0" layoutY="130.0" prefHeight="42.0" prefWidth="124.0" text="Student Name :">
+         <font>
+            <Font name="Tahoma Bold" size="15.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-1.0" contrast="1.0" hue="1.0" saturation="1.0" />
+         </effect>
+      </Label>
+      <Label layoutX="827.0" layoutY="210.0" prefHeight="42.0" prefWidth="115.0" text="Date of Birth :">
+         <font>
+            <Font name="Tahoma Bold" size="15.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-1.0" contrast="1.0" hue="1.0" saturation="1.0" />
+         </effect>
+      </Label>
+      <Label layoutX="868.0" layoutY="131.0" prefHeight="42.0" prefWidth="74.0" text="Gender :">
+         <font>
+            <Font name="Tahoma Bold" size="15.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-1.0" contrast="1.0" hue="1.0" saturation="1.0" />
+         </effect>
+      </Label>
+      <JFXTextField layoutX="188.0" layoutY="144.0" style="-fx-background-color: white;" />
+      <JFXTextField layoutX="629.0" layoutY="137.0" style="-fx-background-color: white;" />
+      <ComboBox layoutX="959.0" layoutY="143.0" prefWidth="150.0" />
+      <JFXTextField layoutX="179.0" layoutY="221.0" style="-fx-background-color: white;" />
+      <JFXTextField layoutX="583.0" layoutY="223.0" style="-fx-background-color: white;" />
+      <DatePicker layoutX="95.0" layoutY="83.0" style="-fx-background-color: black;" />
    </children>
 </AnchorPane>

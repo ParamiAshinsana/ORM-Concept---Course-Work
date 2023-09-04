@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.effect.DropShadow?>
@@ -75,6 +75,6 @@
             <DropShadow />
          </effect>
       </Label>
-      <JFXComboBox fx:id="cBoxUserProfile" layoutX="297.0" layoutY="386.0" prefHeight="40.0" prefWidth="335.0" promptText="User Name" style="-fx-background-color: white;" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" />
+      <JFXTextField fx:id="txtUserProfile" layoutX="292.0" layoutY="384.0" prefHeight="40.0" prefWidth="335.0" promptText="User Name" style="-fx-background-color: white;" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" />
    </children>
 </AnchorPane>

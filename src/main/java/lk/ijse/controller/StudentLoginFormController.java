@@ -1,6 +1,7 @@
 package lk.ijse.controller;
 
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,6 +16,7 @@ public class StudentLoginFormController {
     public PasswordField txtPassword;
     public JFXComboBox cBoxUserProfile;
     public AnchorPane rootLogin;
+    public JFXTextField txtUserProfile;
 
     public void BtnLoginOnAction(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
