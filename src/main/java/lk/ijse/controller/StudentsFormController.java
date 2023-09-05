@@ -135,7 +135,20 @@ public class StudentsFormController implements Initializable {
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
-
+        String studentId = txtFieldStudentId.getText();
+        try {
+            studentBO.deleteStudents(studentId);
+            new Alert(Alert.AlertType.CONFIRMATION, "Student Deleted !").show();
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR, "SQL Error !").show();
+        }
+        txtFieldStudentId.setText("");
+        txtFieldStudentName.setText("");
+        txtFieldAddress.setText("");
+        txtContact.setText("");
+        datePickerDob.setValue(null);
+        CBoxgender.setValue("");
+        getAll();
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
@@ -155,7 +168,6 @@ public class StudentsFormController implements Initializable {
 //        System.out.println(">>>>> "+index);
 
         stId = colId.getCellData(index).toString();
-        txtFieldStudentId.setText(colId.getCellData(index).toString());
         txtFieldStudentName.setText(colName.getCellData(index).toString());
         txtFieldAddress.setText(colAddress.getCellData(index).toString());
         txtContact.setText(colContact.getCellData(index).toString());

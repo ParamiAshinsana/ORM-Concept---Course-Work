@@ -35,8 +35,8 @@ public class StudentBOImpl implements StudentBO {
     }
 
     @Override
-    public boolean deleteStudents(String id) throws SQLException, ClassNotFoundException {
-        return false;
+    public boolean deleteStudents(String id) throws SQLException, ClassNotFoundException, IOException {
+        return studentDAO.delete(id);
     }
 
     @Override
