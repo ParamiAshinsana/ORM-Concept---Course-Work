@@ -1,6 +1,7 @@
 package lk.ijse.controller;
 
 import com.jfoenix.controls.JFXTextField;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -52,6 +53,9 @@ public class StudentsFormController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setCellValueFactory();
         getAll();
+
+        ObservableList<String> genderBox = FXCollections.observableArrayList( "Male","Female");
+        CBoxgender.setItems(genderBox);
     }
 
     @SneakyThrows
@@ -88,14 +92,20 @@ public class StudentsFormController implements Initializable {
         String dob = String.valueOf(datePickerDob.getValue());
         String gender = String.valueOf(CBoxgender.getValue());
 
-
-
         try {
             studentBO.addStudents(new StudentDTO(studentId,studentName,address,contact,dob,gender));
             new Alert(Alert.AlertType.CONFIRMATION, "Student Saved !").show();
         }catch (Exception e){
             new Alert(Alert.AlertType.ERROR, "SQL Error !").show();
         }
+
+        getAll();
+        txtFieldStudentId.setText("");
+        txtFieldStudentName.setText("");
+        txtFieldAddress.setText("");
+        txtContact.setText("");
+        datePickerDob.setValue(null);
+        CBoxgender.setValue("");
     }
 
     public void studentTableonclicked(MouseEvent mouseEvent) {
