@@ -46,13 +46,25 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public boolean delete(String id) throws SQLException, ClassNotFoundException, IOException {
+//        Session session = FactoryConfiguration.getInstance().getSession();
+//        Transaction transaction = session.beginTransaction();
+//
+//        session.createNativeQuery("delete from Student where studentId='"+id+"'",Student.class).executeUpdate();
+//        transaction.commit();
+//        session.close();
+//
+//        return true;
+
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-        session.createNativeQuery("delete from Student where id='"+id+"'",Student.class).executeUpdate();
+        String sql = "DELETE FROM student WHERE studentId = :sId";
+        NativeQuery<Student> nativeQuery = session.createNativeQuery(sql);
+        nativeQuery.setParameter("sId",id);
+        nativeQuery.executeUpdate();
+
         transaction.commit();
         session.close();
-
         return true;
 
     }

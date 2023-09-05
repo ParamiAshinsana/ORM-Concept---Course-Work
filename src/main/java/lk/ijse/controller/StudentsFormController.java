@@ -135,9 +135,8 @@ public class StudentsFormController implements Initializable {
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
-        String studentId = txtFieldStudentId.getText();
         try {
-            studentBO.deleteStudents(studentId);
+            studentBO.deleteStudents(stId);
             new Alert(Alert.AlertType.CONFIRMATION, "Student Deleted !").show();
         }catch (Exception e){
             new Alert(Alert.AlertType.ERROR, "SQL Error !").show();
@@ -165,7 +164,7 @@ public class StudentsFormController implements Initializable {
         if (index <= -1) {
             return;
         }
-//        System.out.println(">>>>> "+index);
+//      System.out.println(">>>>> "+index);
 
         stId = colId.getCellData(index).toString();
         txtFieldStudentName.setText(colName.getCellData(index).toString());
