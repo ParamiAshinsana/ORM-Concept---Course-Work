@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -95,16 +92,5 @@
          </image>
       </ImageView>
       <StackPane fx:id="controllarea" layoutX="374.0" layoutY="104.0" opacity="0.61" prefHeight="660.0" prefWidth="1145.0" style="-fx-background-color: white;" styleClass="StakePane" stylesheets="@../css/stylesheet_css.css" />
-      <TableView layoutX="1010.0" layoutY="182.0" prefHeight="200.0" prefWidth="200.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
-      </TableView>
-      <Label layoutX="434.0" layoutY="169.0" prefHeight="44.0" prefWidth="119.0" text="NAME" textFill="#59a8f8">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>

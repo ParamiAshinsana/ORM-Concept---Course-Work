@@ -1,12 +1,13 @@
 package lk.ijse.dao;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 public interface CrudDAO<T> extends SuperDAO{
     public ArrayList<T> getAll()throws SQLException, ClassNotFoundException;
 
-    public boolean add(T entity) throws SQLException, ClassNotFoundException ;
+    public boolean add(T entity) throws SQLException, ClassNotFoundException, IOException;
 
     public boolean update(T entity) throws SQLException, ClassNotFoundException ;
 

@@ -1,6 +1,11 @@
 package lk.ijse.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Student {
+    @Id
     private String studentId;
     private String studentName;
     private String address;

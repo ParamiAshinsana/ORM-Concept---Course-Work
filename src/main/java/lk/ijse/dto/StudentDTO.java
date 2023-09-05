@@ -1,49 +1,82 @@
 package lk.ijse.dto;
 
 public class StudentDTO {
-    private String id;
-    private String name;
-    private int age;
+    private String studentId;
+    private String studentName;
+    private String address;
+    private String contact;
+    private String dob;
+    private String gender;
 
     public StudentDTO() {
     }
 
-    public StudentDTO(String id, String name, int age) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
+    public StudentDTO(String studentId, String studentName, String address, String contact, String dob, String gender) {
+        this.studentId = studentId;
+        this.studentName = studentName;
+        this.address = address;
+        this.contact = contact;
+        this.dob = dob;
+        this.gender = gender;
     }
 
     @Override
     public String toString() {
         return "StudentDTO{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", age=" + age +
+                "studentId='" + studentId + '\'' +
+                ", studentName='" + studentName + '\'' +
+                ", address='" + address + '\'' +
+                ", contact='" + contact + '\'' +
+                ", dob='" + dob + '\'' +
+                ", gender='" + gender + '\'' +
                 '}';
     }
 
-    public String getId() {
-        return id;
+    public String getStudentId() {
+        return studentId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
     }
 
-    public String getName() {
-        return name;
+    public String getStudentName() {
+        return studentName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 
-    public int getAge() {
-        return age;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }
