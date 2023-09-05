@@ -12,6 +12,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
+import lk.ijse.util.FactoryConfiguration;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.io.IOException;
 import java.net.URL;
@@ -31,6 +34,16 @@ public class LoadingFormController implements Initializable {
         //KeyFrame keyFrame = new KeyFrame(Duration.millis(10000), actionEvent -> {
         KeyFrame keyFrame = new KeyFrame(Duration.millis(8000), actionEvent -> {
             System.out.println("Initializing...");
+
+            Session session = null;
+            try {
+                session = FactoryConfiguration.getInstance().getSession();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            Transaction transaction = session.beginTransaction();
+            transaction.commit();
+            session.close();
         });
 
         timeline.getKeyFrames().addAll(keyFrame);

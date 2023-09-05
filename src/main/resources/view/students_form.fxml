@@ -9,9 +9,6 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.effect.ColorAdjust?>
-<?import javafx.scene.effect.DisplacementMap?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.effect.FloatMap?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -26,25 +23,15 @@
             <Blend />
          </effect>
       </Label>
-      <TableView fx:id="studentTbl" layoutX="16.0" layoutY="381.0" onMouseClicked="#studentTableonclicked" prefHeight="270.0" prefWidth="1111.0">
+      <TableView fx:id="studentTbl" layoutX="14.0" layoutY="381.0" onMouseClicked="#studentTableonclicked" prefHeight="270.0" prefWidth="1121.0">
         <columns>
           <TableColumn fx:id="colId" prefWidth="145.0" text="Student Id" />
-          <TableColumn fx:id="colName" prefWidth="230.0" text="Student Name" />
-            <TableColumn fx:id="colGender" prefWidth="203.0" text="Gender" />
+          <TableColumn fx:id="colName" prefWidth="260.0" text="Student Name" />
+            <TableColumn fx:id="colGender" prefWidth="173.0" text="Gender" />
             <TableColumn fx:id="colAddress" prefWidth="193.0" text="Address" />
-            <TableColumn fx:id="colContact" prefWidth="165.0" text="Contact" />
-            <TableColumn fx:id="colDob" prefWidth="173.0" text="DOB" />
+            <TableColumn fx:id="colContact" prefWidth="190.0" text="Contact" />
+            <TableColumn fx:id="colDob" prefWidth="154.0" text="DOB" />
         </columns>
-         <effect>
-            <DisplacementMap>
-               <mapData>
-                  <FloatMap />
-               </mapData>
-               <input>
-                  <DropShadow color="#2f76cd" height="30.33" radius="15.634999999999998" spread="0.4" width="34.21" />
-               </input>
-            </DisplacementMap>
-         </effect>
       </TableView>
       <Label layoutX="44.0" layoutY="131.0" prefHeight="42.0" prefWidth="102.0" text="Student ID :">
          <font>
@@ -110,7 +97,4 @@
          </font>
       </Button>
    </children>
-   <effect>
-      <ColorAdjust contrast="1.0" />
-   </effect>
 </AnchorPane>
