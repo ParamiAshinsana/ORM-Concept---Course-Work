@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -24,14 +25,14 @@
             <Blend />
          </effect>
       </Label>
-      <TableView layoutX="16.0" layoutY="381.0" prefHeight="270.0" prefWidth="1111.0">
+      <TableView fx:id="studentTbl" layoutX="16.0" layoutY="381.0" onMouseClicked="#studentTableonclicked" prefHeight="270.0" prefWidth="1111.0">
         <columns>
-          <TableColumn prefWidth="145.0" text="C1" />
-          <TableColumn prefWidth="230.0" text="C2" />
-            <TableColumn prefWidth="203.0" text="C2" />
-            <TableColumn prefWidth="193.0" text="C2" />
-            <TableColumn prefWidth="165.0" text="C2" />
-            <TableColumn prefWidth="173.0" text="C2" />
+          <TableColumn fx:id="colId" prefWidth="145.0" text="Student Id" />
+          <TableColumn fx:id="colName" prefWidth="230.0" text="Student Name" />
+            <TableColumn fx:id="colGender" prefWidth="203.0" text="Gender" />
+            <TableColumn fx:id="colAddress" prefWidth="193.0" text="Address" />
+            <TableColumn fx:id="colContact" prefWidth="165.0" text="Contact" />
+            <TableColumn fx:id="colDob" prefWidth="173.0" text="DOB" />
         </columns>
          <effect>
             <DisplacementMap>
@@ -60,7 +61,7 @@
             <ColorAdjust brightness="-1.0" contrast="1.0" hue="1.0" saturation="1.0" />
          </effect>
       </Label>
-      <Label layoutX="438.0" layoutY="216.0" prefHeight="42.0" prefWidth="102.0" text="Contact  :">
+      <Label layoutX="370.0" layoutY="216.0" prefHeight="42.0" prefWidth="102.0" text="Contact  :">
          <font>
             <Font name="Tahoma Bold" size="15.0" />
          </font>
@@ -68,7 +69,7 @@
             <ColorAdjust brightness="-1.0" contrast="1.0" hue="1.0" saturation="1.0" />
          </effect>
       </Label>
-      <Label layoutX="435.0" layoutY="130.0" prefHeight="42.0" prefWidth="124.0" text="Student Name :">
+      <Label layoutX="435.0" layoutY="131.0" prefHeight="42.0" prefWidth="124.0" text="Student Name :">
          <font>
             <Font name="Tahoma Bold" size="15.0" />
          </font>
@@ -76,7 +77,7 @@
             <ColorAdjust brightness="-1.0" contrast="1.0" hue="1.0" saturation="1.0" />
          </effect>
       </Label>
-      <Label layoutX="827.0" layoutY="210.0" prefHeight="42.0" prefWidth="115.0" text="Date of Birth :">
+      <Label layoutX="721.0" layoutY="213.0" prefHeight="42.0" prefWidth="115.0" text="Date of Birth :">
          <font>
             <Font name="Tahoma Bold" size="15.0" />
          </font>
@@ -84,7 +85,7 @@
             <ColorAdjust brightness="-1.0" contrast="1.0" hue="1.0" saturation="1.0" />
          </effect>
       </Label>
-      <Label layoutX="868.0" layoutY="131.0" prefHeight="42.0" prefWidth="74.0" text="Gender :">
+      <Label layoutX="866.0" layoutY="134.0" prefHeight="42.0" prefWidth="74.0" text="Gender :">
          <font>
             <Font name="Tahoma Bold" size="15.0" />
          </font>
@@ -92,11 +93,12 @@
             <ColorAdjust brightness="-1.0" contrast="1.0" hue="1.0" saturation="1.0" />
          </effect>
       </Label>
-      <JFXTextField layoutX="188.0" layoutY="144.0" style="-fx-background-color: white;" />
-      <JFXTextField layoutX="629.0" layoutY="137.0" style="-fx-background-color: white;" />
-      <ComboBox layoutX="959.0" layoutY="143.0" prefWidth="150.0" />
-      <JFXTextField layoutX="179.0" layoutY="221.0" style="-fx-background-color: white;" />
-      <JFXTextField layoutX="583.0" layoutY="223.0" style="-fx-background-color: white;" />
-      <DatePicker layoutX="95.0" layoutY="83.0" style="-fx-background-color: black;" />
+      <JFXTextField fx:id="txtFieldStudentId" layoutX="173.0" layoutY="130.0" prefHeight="29.0" prefWidth="184.0" style="-fx-background-color: white;" />
+      <JFXTextField fx:id="txtFieldStudentName" layoutX="580.0" layoutY="133.0" prefHeight="29.0" prefWidth="218.0" style="-fx-background-color: white;" />
+      <ComboBox fx:id="CBoxgender" layoutX="959.0" layoutY="143.0" prefWidth="150.0" />
+      <JFXTextField fx:id="txtFieldAddress" layoutX="156.0" layoutY="213.0" style="-fx-background-color: white;" />
+      <JFXTextField fx:id="txtContact" layoutX="463.0" layoutY="217.0" style="-fx-background-color: white;" />
+      <DatePicker fx:id="datePickerDob" layoutX="855.0" layoutY="220.0" style="-fx-background-color: black;" />
+      <Button fx:id="btnSave" layoutX="457.0" layoutY="288.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="42.0" prefWidth="102.0" style="-fx-background-color: #54a0ff;" text="Save" />
    </children>
 </AnchorPane>
