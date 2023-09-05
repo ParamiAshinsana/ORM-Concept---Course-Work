@@ -139,7 +139,12 @@ public class StudentsFormController implements Initializable {
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
-
+        txtFieldStudentId.setText("");
+        txtFieldStudentName.setText("");
+        txtFieldAddress.setText("");
+        txtContact.setText("");
+        datePickerDob.setValue(null);
+        CBoxgender.setValue("");
     }
 
     public void studentTableonclicked(MouseEvent mouseEvent) {
