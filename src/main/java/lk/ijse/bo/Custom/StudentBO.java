@@ -13,7 +13,7 @@ public interface StudentBO extends SuperBO {
 
     public boolean addStudents(StudentDTO dto) throws SQLException, ClassNotFoundException, IOException;
 
-    public boolean updateStudents(StudentDTO dto) throws SQLException, ClassNotFoundException ;
+    public boolean updateStudents(StudentDTO dto) throws SQLException, ClassNotFoundException, IOException;
 
     public boolean deleteStudents(String id) throws SQLException, ClassNotFoundException;
 

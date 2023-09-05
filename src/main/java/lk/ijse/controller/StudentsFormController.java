@@ -19,13 +19,19 @@ import lombok.SneakyThrows;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class StudentsFormController implements Initializable {
     StudentBO studentBO = (StudentBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.B_STUDENT);
+    String stId;
 
+    public Button btnSave;
+    public Button btnUpdate;
+    public Button btnClear;
+    public Button btnDelete;
 
     public AnchorPane rootStudent;
 
@@ -45,8 +51,6 @@ public class StudentsFormController implements Initializable {
     public TableColumn <? , ?> colGender;
 
     public ObservableList<StudentTM> observableList;
-
-    public Button btnSave;
 
     @SneakyThrows
     @Override
@@ -108,7 +112,49 @@ public class StudentsFormController implements Initializable {
         CBoxgender.setValue("");
     }
 
-    public void studentTableonclicked(MouseEvent mouseEvent) {
+    public void btnUpdateOnAction(ActionEvent actionEvent) {
+        String studentName = txtFieldStudentName.getText();
+        String address = txtFieldAddress.getText();
+        String contact = txtContact.getText();
+        String dob = String.valueOf(datePickerDob.getValue());
+        String gender = String.valueOf(CBoxgender.getValue());
 
+        try {
+            studentBO.updateStudents(new StudentDTO(stId,studentName,address,contact,dob,gender));
+            new Alert(Alert.AlertType.CONFIRMATION, "Student Updated !").show();
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR, "SQL Error !").show();
+        }
+        txtFieldStudentId.setText("");
+        txtFieldStudentName.setText("");
+        txtFieldAddress.setText("");
+        txtContact.setText("");
+        datePickerDob.setValue(null);
+        CBoxgender.setValue("");
+        getAll();
+    }
+
+    public void btnDeleteOnAction(ActionEvent actionEvent) {
+
+    }
+
+    public void btnClearOnAction(ActionEvent actionEvent) {
+
+    }
+
+    public void studentTableonclicked(MouseEvent mouseEvent) {
+        Integer index = studentTbl.getSelectionModel().getSelectedIndex();
+        if (index <= -1) {
+            return;
+        }
+//        System.out.println(">>>>> "+index);
+
+        stId = colId.getCellData(index).toString();
+        txtFieldStudentId.setText(colId.getCellData(index).toString());
+        txtFieldStudentName.setText(colName.getCellData(index).toString());
+        txtFieldAddress.setText(colAddress.getCellData(index).toString());
+        txtContact.setText(colContact.getCellData(index).toString());
+        datePickerDob.setValue(LocalDate.parse(colDob.getCellData(index).toString()));
+        CBoxgender.setValue(colGender.getCellData(index).toString());
     }
 }
