@@ -1,6 +1,7 @@
 package lk.ijse.controller;
 
 import com.jfoenix.controls.JFXTextField;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
@@ -8,6 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.Custom.StudentBO;
 import lk.ijse.dto.StudentDTO;
+import lk.ijse.dto.tm.StudentTM;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -25,13 +27,15 @@ public class StudentsFormController {
     public JFXTextField txtContact;
     public DatePicker dob;
 
-    public TableView studentTbl;
-    public TableColumn colId;
-    public TableColumn colName;
-    public TableColumn colGender;
-    public TableColumn colAddress;
-    public TableColumn colContact;
-    public TableColumn colDob;
+    public TableView <StudentTM> studentTbl;
+    public TableColumn <? , ?> colId;
+    public TableColumn <? , ?> colName;
+    public TableColumn <? , ?> colGender;
+    public TableColumn <? , ?> colAddress;
+    public TableColumn <? , ?> colContact;
+    public TableColumn <? , ?> colDob;
+
+    public ObservableList<StudentTM> observableList;
 
     public Button btnSave;
     public DatePicker datePickerDob;
