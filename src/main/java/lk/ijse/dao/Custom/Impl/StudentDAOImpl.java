@@ -5,15 +5,23 @@ import lk.ijse.entity.Student;
 import lk.ijse.util.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.NativeQuery;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.List;
 
 public class StudentDAOImpl implements StudentDAO {
     @Override
-    public ArrayList<Student> getAll() throws SQLException, ClassNotFoundException {
-        return null;
+    public List getAll() throws SQLException, ClassNotFoundException, IOException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        NativeQuery nativeQuery = session.createNativeQuery("SELECT * FROM Student");
+        nativeQuery.addEntity(Student.class);
+        List nStudents = nativeQuery.getResultList();
+        transaction.commit();
+        session.close();
+        return nStudents;
     }
 
     @Override

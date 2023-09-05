@@ -6,9 +6,10 @@ import lk.ijse.dto.StudentDTO;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public interface StudentBO extends SuperBO {
-    public ArrayList<StudentDTO> getAllStudents()throws SQLException, ClassNotFoundException;
+    public List<StudentDTO> getAllStudents() throws SQLException, ClassNotFoundException, IOException;
 
     public boolean addStudents(StudentDTO dto) throws SQLException, ClassNotFoundException, IOException;
 

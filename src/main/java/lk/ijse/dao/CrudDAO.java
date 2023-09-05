@@ -3,9 +3,10 @@ package lk.ijse.dao;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public interface CrudDAO<T> extends SuperDAO{
-    public ArrayList<T> getAll()throws SQLException, ClassNotFoundException;
+    public List<T> getAll() throws SQLException, ClassNotFoundException, IOException;
 
     public boolean add(T entity) throws SQLException, ClassNotFoundException, IOException;
 

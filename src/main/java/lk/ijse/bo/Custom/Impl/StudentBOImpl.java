@@ -9,13 +9,19 @@ import lk.ijse.entity.Student;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class StudentBOImpl implements StudentBO {
     StudentDAO studentDAO = (StudentDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.D_STUDENTS);
 
     @Override
-    public ArrayList<StudentDTO> getAllStudents() throws SQLException, ClassNotFoundException {
-        return null;
+    public List<StudentDTO> getAllStudents() throws SQLException, ClassNotFoundException, IOException {
+        List<StudentDTO> allstudents= new ArrayList<>();
+        List<Student> all = studentDAO.getAll();
+        for (Student s : all) {
+            allstudents.add(new StudentDTO(s.getStudentId(),s.getStudentName(),s.getAddress(),s.getContact(),s.getDob(),s.getGender()));
+        }
+        return allstudents;
     }
 
     @Override

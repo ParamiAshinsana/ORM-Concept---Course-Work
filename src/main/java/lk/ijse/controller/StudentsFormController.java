@@ -3,18 +3,26 @@ package lk.ijse.controller;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.Custom.StudentBO;
 import lk.ijse.dto.StudentDTO;
 import lk.ijse.dto.tm.StudentTM;
+import lk.ijse.entity.Student;
+import lombok.SneakyThrows;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
 
-public class StudentsFormController {
+public class StudentsFormController implements Initializable {
     StudentBO studentBO = (StudentBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.B_STUDENT);
 
 
@@ -25,20 +33,52 @@ public class StudentsFormController {
     public ComboBox CBoxgender;
     public JFXTextField txtFieldAddress;
     public JFXTextField txtContact;
-    public DatePicker dob;
+    public DatePicker datePickerDob;
 
     public TableView <StudentTM> studentTbl;
     public TableColumn <? , ?> colId;
     public TableColumn <? , ?> colName;
-    public TableColumn <? , ?> colGender;
     public TableColumn <? , ?> colAddress;
     public TableColumn <? , ?> colContact;
     public TableColumn <? , ?> colDob;
+    public TableColumn <? , ?> colGender;
 
     public ObservableList<StudentTM> observableList;
 
     public Button btnSave;
-    public DatePicker datePickerDob;
+
+    @SneakyThrows
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        setCellValueFactory();
+        getAll();
+    }
+
+    @SneakyThrows
+    private void getAll() {
+        studentTbl.getItems().clear();
+        try {
+            List<StudentDTO> allstudents = studentBO.getAllStudents();
+
+            for (StudentDTO s : allstudents) {
+                studentTbl.getItems().add(new StudentTM(s.getStudentId(),s.getStudentName(),s.getAddress(),s.getContact(),s.getDob(),s.getGender()));
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
+    }
+
+
+    private void setCellValueFactory() {
+        colId.setCellValueFactory(new PropertyValueFactory<>("studentId"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("studentName"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        colContact.setCellValueFactory(new PropertyValueFactory<>("contact"));
+        colDob.setCellValueFactory(new PropertyValueFactory<>("dob"));
+        colGender.setCellValueFactory(new PropertyValueFactory<>("gender"));
+    }
 
     public void btnSaveOnAction(ActionEvent actionEvent) throws SQLException{
         String studentId = txtFieldStudentId.getText();
@@ -48,8 +88,7 @@ public class StudentsFormController {
         String dob = String.valueOf(datePickerDob.getValue());
         String gender = String.valueOf(CBoxgender.getValue());
 
-        System.out.println(txtFieldStudentId);
-        System.out.println("HIII");
+
 
         try {
             studentBO.addStudents(new StudentDTO(studentId,studentName,address,contact,dob,gender));
