@@ -16,8 +16,11 @@ import lk.ijse.dto.RoomDTO;
 import lk.ijse.dto.StudentDTO;
 import lk.ijse.dto.tm.RoomTM;
 import lk.ijse.dto.tm.StudentTM;
+import lombok.SneakyThrows;
 
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class RoomsFormController implements Initializable {
@@ -40,6 +43,7 @@ public class RoomsFormController implements Initializable {
     public TableColumn <? , ?> colKeymoney;
     public TableColumn <? , ?> colQty;
 
+    @SneakyThrows
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setCellValueFactory();
@@ -52,8 +56,20 @@ public class RoomsFormController implements Initializable {
         typeCBox.setItems(roomTypeBox);
     }
 
+    @SneakyThrows
     private void getAll() {
+        roomTbl.getItems().clear();
+        try {
+            List<RoomDTO> allrooms = roomBO.getAllRooms();
 
+            for (RoomDTO r : allrooms) {
+                roomTbl.getItems().add(new RoomTM(r.getRoomTypeId(),r.getType(),r.getKeyMoney(),r.getQty()));
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
     }
 
     private void setCellValueFactory() {
