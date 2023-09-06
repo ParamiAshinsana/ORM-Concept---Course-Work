@@ -77,7 +77,6 @@ public class RoomsFormController implements Initializable {
         typeCBox.setValue("");
         txtKeymoney.setText("");
         roomQty.setText("");
-
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
