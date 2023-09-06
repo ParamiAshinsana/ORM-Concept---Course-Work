@@ -1,6 +1,11 @@
 package lk.ijse.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Room {
+    @Id
     private String roomTypeId;
     private String type;
     private Double keyMoney;

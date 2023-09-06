@@ -3,6 +3,9 @@ package lk.ijse.dao.Custom.Impl;
 import lk.ijse.dao.Custom.RoomDAO;
 import lk.ijse.dao.Custom.StudentDAO;
 import lk.ijse.entity.Room;
+import lk.ijse.util.FactoryConfiguration;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -16,7 +19,12 @@ public class RoomDAOImpl implements RoomDAO {
 
     @Override
     public boolean add(Room entity) throws SQLException, ClassNotFoundException, IOException {
-        return false;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        session.persist(entity);
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override
