@@ -119,7 +119,10 @@ public class RoomsFormController implements Initializable {
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
-
+        roomQty.setText("");
+        txtKeymoney.setText("");
+        roomIdCBox.setValue("");
+        typeCBox.setValue("");
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
