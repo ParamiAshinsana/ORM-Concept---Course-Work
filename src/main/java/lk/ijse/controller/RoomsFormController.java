@@ -8,6 +8,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.dto.tm.StudentTM;
 
 public class RoomsFormController {
     public AnchorPane rootRoom;
@@ -22,10 +23,10 @@ public class RoomsFormController {
     public Button btnDelete;
 
     public TableView roomTbl;
-    public TableColumn colRId;
-    public TableColumn colType;
-    public TableColumn colKeymoney;
-    public TableColumn colQty;
+    public TableColumn <? , ?>colRId;
+    public TableColumn <? , ?> colType;
+    public TableColumn <? , ?> colKeymoney;
+    public TableColumn <? , ?> colQty;
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
 
