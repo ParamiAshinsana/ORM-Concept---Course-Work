@@ -40,6 +40,6 @@ public class RoomBOImpl implements RoomBO {
 
     @Override
     public boolean deleteRooms(String id) throws SQLException, ClassNotFoundException, IOException {
-        return false;
+        return roomDAO.delete(id);
     }
 }
