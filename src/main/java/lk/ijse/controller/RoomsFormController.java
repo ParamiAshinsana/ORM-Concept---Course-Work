@@ -126,7 +126,17 @@ public class RoomsFormController implements Initializable {
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
-
+        try {
+            roomBO.deleteRooms(rmId);
+            new Alert(Alert.AlertType.CONFIRMATION, "Room Deleted !").show();
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR, "SQL Error !").show();
+        }
+        roomQty.setText("");
+        txtKeymoney.setText("");
+        roomIdCBox.setValue("");
+        typeCBox.setValue("");
+        getAll();
     }
 
     public void roomTableonclicked(MouseEvent mouseEvent) {
