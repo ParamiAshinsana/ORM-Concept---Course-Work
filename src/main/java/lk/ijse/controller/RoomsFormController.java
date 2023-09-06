@@ -20,6 +20,7 @@ import lombok.SneakyThrows;
 
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -126,6 +127,13 @@ public class RoomsFormController implements Initializable {
     }
 
     public void roomTableonclicked(MouseEvent mouseEvent) {
-
+        Integer index = roomTbl.getSelectionModel().getSelectedIndex();
+        if (index <= -1) {
+            return;
+        }
+        rmId = colRId.getCellData(index).toString();
+        typeCBox.setValue(colType.getCellData(index).toString());
+        txtKeymoney.setText(colKeymoney.getCellData(index).toString());
+        roomQty.setText(colQty.getCellData(index).toString());
     }
 }
