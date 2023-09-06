@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.bo.BOFactory;
@@ -56,7 +57,10 @@ public class RoomsFormController implements Initializable {
     }
 
     private void setCellValueFactory() {
-
+        colRId.setCellValueFactory(new PropertyValueFactory<>("roomTypeId"));
+        colType.setCellValueFactory(new PropertyValueFactory<>("type"));
+        colKeymoney.setCellValueFactory(new PropertyValueFactory<>("keyMoney"));
+        colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
