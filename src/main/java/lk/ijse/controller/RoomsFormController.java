@@ -100,7 +100,21 @@ public class RoomsFormController implements Initializable {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+        String type = String.valueOf(typeCBox.getValue());
+        double keyMoney = Double.parseDouble(txtKeymoney.getText());
+        int qty = Integer.parseInt(roomQty.getText());
 
+        try {
+            roomBO.updateRooms(new RoomDTO(rmId,type,keyMoney,qty));
+            new Alert(Alert.AlertType.CONFIRMATION, "Room Updated !").show();
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR, "SQL Error !").show();
+        }
+        roomQty.setText("");
+        txtKeymoney.setText("");
+        roomIdCBox.setValue("");
+        typeCBox.setValue("");
+        getAll();
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
