@@ -1,5 +1,6 @@
 package lk.ijse.dao;
 
+import lk.ijse.dao.Custom.Impl.RoomDAOImpl;
 import lk.ijse.dao.Custom.Impl.StudentDAOImpl;
 
 public class DAOFactory {
