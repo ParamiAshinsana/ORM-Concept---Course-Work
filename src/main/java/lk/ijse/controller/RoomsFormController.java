@@ -5,12 +5,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.bo.BOFactory;
+import lk.ijse.bo.Custom.RoomBO;
+import lk.ijse.bo.Custom.StudentBO;
+import lk.ijse.dto.RoomDTO;
+import lk.ijse.dto.StudentDTO;
 import lk.ijse.dto.tm.RoomTM;
 import lk.ijse.dto.tm.StudentTM;
 
@@ -18,6 +20,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class RoomsFormController implements Initializable {
+    RoomBO roomBO = (RoomBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.B_ROOM);
+    String rmId;
     public AnchorPane rootRoom;
     public ComboBox typeCBox;
     public ComboBox roomIdCBox;
@@ -56,6 +60,23 @@ public class RoomsFormController implements Initializable {
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
+        String roomTypeId = String.valueOf(roomIdCBox.getValue());
+        String type = String.valueOf(typeCBox.getValue());
+        double keyMoney = Double.parseDouble(txtKeymoney.getText());
+        int qty = Integer.parseInt(roomQty.getText());
+
+        try {
+            roomBO.addRooms(new RoomDTO(roomTypeId,type,keyMoney,qty));
+            new Alert(Alert.AlertType.CONFIRMATION, "Room Saved !").show();
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR, "SQL Error !").show();
+        }
+
+        getAll();
+        roomIdCBox.setValue("");
+        typeCBox.setValue("");
+        txtKeymoney.setText("");
+        roomQty.setText("");
 
     }
 
