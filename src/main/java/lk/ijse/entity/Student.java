@@ -2,6 +2,9 @@ package lk.ijse.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
+import java.util.List;
 
 @Entity
 public class Student {
@@ -12,6 +15,9 @@ public class Student {
     private String contact;
     private String dob;
     private String gender;
+
+    @OneToMany(mappedBy = "student")
+    private List<Reservation> reservation;
 
     public Student() {
     }
