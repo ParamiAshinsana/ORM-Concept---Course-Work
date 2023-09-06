@@ -35,7 +35,7 @@ public class RoomBOImpl implements RoomBO {
 
     @Override
     public boolean updateRooms(RoomDTO dto) throws SQLException, ClassNotFoundException, IOException {
-        return false;
+        return roomDAO.update(new Room(dto.getRoomTypeId(),dto.getType(),dto.getKeyMoney(),dto.getQty()));
     }
 
     @Override
