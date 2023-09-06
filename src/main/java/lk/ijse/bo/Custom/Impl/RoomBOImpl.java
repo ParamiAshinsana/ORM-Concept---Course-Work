@@ -12,6 +12,7 @@ import lk.ijse.entity.Student;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class RoomBOImpl implements RoomBO {
@@ -19,7 +20,12 @@ public class RoomBOImpl implements RoomBO {
 
     @Override
     public List<RoomDTO> getAllRooms() throws SQLException, ClassNotFoundException, IOException {
-        return null;
+        List<RoomDTO> allrooms= new ArrayList<>();
+        List<Room> all = roomDAO.getAll();
+        for (Room r : all) {
+            allrooms.add(new RoomDTO(r.getRoomTypeId(),r.getType(),r.getKeyMoney(),r.getQty()));
+        }
+        return allrooms;
     }
 
     @Override
