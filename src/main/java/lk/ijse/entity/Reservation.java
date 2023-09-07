@@ -8,33 +8,34 @@ import jakarta.persistence.ManyToOne;
 public class Reservation {
     @Id
     private String reservationId;
-    private String date;
-    private String status;
-
     @ManyToOne
     private Student student;
     @ManyToOne
     private Room room;
+    private String date;
+    private String status;
+
+
 
     public Reservation() {
     }
 
-    public Reservation(String reservationId, String date, String status, Student student, Room room) {
+    public Reservation(String reservationId, Student student, Room room, String date, String status) {
         this.reservationId = reservationId;
-        this.date = date;
-        this.status = status;
         this.student = student;
         this.room = room;
+        this.date = date;
+        this.status = status;
     }
 
     @Override
     public String toString() {
         return "Reservation{" +
                 "reservationId='" + reservationId + '\'' +
-                ", date='" + date + '\'' +
-                ", status='" + status + '\'' +
                 ", student=" + student +
                 ", room=" + room +
+                ", date='" + date + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 
@@ -44,22 +45,6 @@ public class Reservation {
 
     public void setReservationId(String reservationId) {
         this.reservationId = reservationId;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public Student getStudent() {
@@ -76,5 +61,21 @@ public class Reservation {
 
     public void setRoom(Room room) {
         this.room = room;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
