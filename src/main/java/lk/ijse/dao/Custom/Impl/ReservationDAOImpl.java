@@ -3,6 +3,10 @@ package lk.ijse.dao.Custom.Impl;
 import lk.ijse.dao.Custom.ReservationDAO;
 import lk.ijse.dao.Custom.RoomDAO;
 import lk.ijse.entity.Reservation;
+import lk.ijse.util.FactoryConfiguration;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.NativeQuery;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -36,12 +40,24 @@ public class ReservationDAOImpl implements ReservationDAO {
     }
 
     @Override
-    public List<String> loadStudentID() {
-        return null;
+    public List<String> uploadStID() throws IOException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        NativeQuery nativeQuery = session.createNativeQuery("SELECT studentId FROM student");
+        List<String> stdnId = nativeQuery.getResultList();
+        transaction.commit();
+        session.close();
+        return stdnId;
     }
 
     @Override
-    public List<String> loadRoomID() {
-        return null;
+    public List<String> uploadRmID() throws IOException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        NativeQuery nativeQuery = session.createNativeQuery("SELECT roomTypeId FROM room");
+        List<String> rmmId = nativeQuery.getResultList();
+        transaction.commit();
+        session.close();
+        return rmmId;
     }
 }
