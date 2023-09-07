@@ -5,5 +5,5 @@ import lk.ijse.entity.Room;
 import lk.ijse.entity.Student;
 
 public interface RoomDAO extends CrudDAO<Room> {
-
+    void updateRoomsQuantity();
 }
