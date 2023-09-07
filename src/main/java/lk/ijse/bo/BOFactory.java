@@ -1,5 +1,6 @@
 package lk.ijse.bo;
 
+import lk.ijse.bo.Custom.Impl.ReservationBOImpl;
 import lk.ijse.bo.Custom.Impl.RoomBOImpl;
 import lk.ijse.bo.Custom.Impl.StudentBOImpl;
 
@@ -13,7 +14,7 @@ public class BOFactory {
     }
 
     public enum BOTypes{
-        B_STUDENT , B_ROOM
+        B_STUDENT , B_ROOM , B_RESERVATION
     }
     public SuperBO getBO(BOTypes types){
         switch (types){
@@ -21,6 +22,8 @@ public class BOFactory {
                 return new StudentBOImpl();
             case  B_ROOM:
                 return new RoomBOImpl();
+            case  B_RESERVATION:
+                return new ReservationBOImpl();
             default:
                 return null;
         }
