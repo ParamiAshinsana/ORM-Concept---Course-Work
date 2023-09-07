@@ -31,6 +31,16 @@ public class Student {
         this.gender = gender;
     }
 
+    public Student(String studentId, String studentName, String address, String contact, String dob, String gender, List<Reservation> reservation) {
+        this.studentId = studentId;
+        this.studentName = studentName;
+        this.address = address;
+        this.contact = contact;
+        this.dob = dob;
+        this.gender = gender;
+        this.reservation = reservation;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -40,6 +50,7 @@ public class Student {
                 ", contact='" + contact + '\'' +
                 ", dob='" + dob + '\'' +
                 ", gender='" + gender + '\'' +
+                ", reservation=" + reservation +
                 '}';
     }
 
@@ -89,5 +100,13 @@ public class Student {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public List<Reservation> getReservation() {
+        return reservation;
+    }
+
+    public void setReservation(List<Reservation> reservation) {
+        this.reservation = reservation;
     }
 }

@@ -1,5 +1,9 @@
 package lk.ijse.dto;
 
+import lk.ijse.entity.Reservation;
+
+import java.util.List;
+
 public class StudentDTO {
     private String studentId;
     private String studentName;
@@ -7,6 +11,9 @@ public class StudentDTO {
     private String contact;
     private String dob;
     private String gender;
+
+    private List<Reservation> reservations;
+
 
     public StudentDTO() {
     }
@@ -20,6 +27,16 @@ public class StudentDTO {
         this.gender = gender;
     }
 
+    public StudentDTO(String studentId, String studentName, String address, String contact, String dob, String gender, List<Reservation> reservations) {
+        this.studentId = studentId;
+        this.studentName = studentName;
+        this.address = address;
+        this.contact = contact;
+        this.dob = dob;
+        this.gender = gender;
+        this.reservations = reservations;
+    }
+
     @Override
     public String toString() {
         return "StudentDTO{" +
@@ -29,6 +46,7 @@ public class StudentDTO {
                 ", contact='" + contact + '\'' +
                 ", dob='" + dob + '\'' +
                 ", gender='" + gender + '\'' +
+                ", reservations=" + reservations +
                 '}';
     }
 
@@ -78,5 +96,13 @@ public class StudentDTO {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
     }
 }
