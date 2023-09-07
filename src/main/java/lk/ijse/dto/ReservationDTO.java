@@ -5,30 +5,31 @@ import lk.ijse.entity.Student;
 
 public class ReservationDTO {
     private String reservationId;
-    private String date;
-    private String status;
     private Student student;
     private Room room;
+    private String date;
+    private String status;
+
 
     public ReservationDTO() {
     }
 
-    public ReservationDTO(String reservationId, String date, String status, Student student, Room room) {
+    public ReservationDTO(String reservationId, Student student, Room room, String date, String status) {
         this.reservationId = reservationId;
-        this.date = date;
-        this.status = status;
         this.student = student;
         this.room = room;
+        this.date = date;
+        this.status = status;
     }
 
     @Override
     public String toString() {
         return "ReservationDTO{" +
                 "reservationId='" + reservationId + '\'' +
-                ", date='" + date + '\'' +
-                ", status='" + status + '\'' +
                 ", student=" + student +
                 ", room=" + room +
+                ", date='" + date + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 
@@ -38,22 +39,6 @@ public class ReservationDTO {
 
     public void setReservationId(String reservationId) {
         this.reservationId = reservationId;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public Student getStudent() {
@@ -70,5 +55,21 @@ public class ReservationDTO {
 
     public void setRoom(Room room) {
         this.room = room;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
