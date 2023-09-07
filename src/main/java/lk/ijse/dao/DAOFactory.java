@@ -1,5 +1,6 @@
 package lk.ijse.dao;
 
+import lk.ijse.dao.Custom.Impl.ReservationDAOImpl;
 import lk.ijse.dao.Custom.Impl.RoomDAOImpl;
 import lk.ijse.dao.Custom.Impl.StudentDAOImpl;
 
@@ -14,7 +15,7 @@ public class DAOFactory {
     }
 
     public enum DAOTypes {
-        D_STUDENTS , D_ROOMS
+        D_STUDENTS , D_ROOMS , D_RESERVATIONS
     }
 
     public SuperDAO getDAO(DAOTypes types){
@@ -23,6 +24,8 @@ public class DAOFactory {
                 return new StudentDAOImpl();
             case D_ROOMS:
                 return new RoomDAOImpl();
+            case D_RESERVATIONS:
+                return new ReservationDAOImpl();
             default:
                 return null;
         }
