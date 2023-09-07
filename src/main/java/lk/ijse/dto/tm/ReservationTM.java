@@ -1,19 +1,19 @@
 package lk.ijse.dto.tm;
 
 public class ReservationTM {
+    private String reservationId;
     private String sid;
     private String rid;
-    private String reservationId;
     private String date;
     private String status;
 
     public ReservationTM() {
     }
 
-    public ReservationTM(String sid, String rid, String reservationId, String date, String status) {
+    public ReservationTM(String reservationId, String sid, String rid, String date, String status) {
+        this.reservationId = reservationId;
         this.sid = sid;
         this.rid = rid;
-        this.reservationId = reservationId;
         this.date = date;
         this.status = status;
     }
@@ -21,12 +21,20 @@ public class ReservationTM {
     @Override
     public String toString() {
         return "ReservationTM{" +
-                "sid='" + sid + '\'' +
+                "reservationId='" + reservationId + '\'' +
+                ", sid='" + sid + '\'' +
                 ", rid='" + rid + '\'' +
-                ", reservationId='" + reservationId + '\'' +
                 ", date='" + date + '\'' +
                 ", status='" + status + '\'' +
                 '}';
+    }
+
+    public String getReservationId() {
+        return reservationId;
+    }
+
+    public void setReservationId(String reservationId) {
+        this.reservationId = reservationId;
     }
 
     public String getSid() {
@@ -43,14 +51,6 @@ public class ReservationTM {
 
     public void setRid(String rid) {
         this.rid = rid;
-    }
-
-    public String getReservationId() {
-        return reservationId;
-    }
-
-    public void setReservationId(String reservationId) {
-        this.reservationId = reservationId;
     }
 
     public String getDate() {
