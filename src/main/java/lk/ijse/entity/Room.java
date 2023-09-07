@@ -27,6 +27,14 @@ public class Room {
         this.qty = qty;
     }
 
+    public Room(String roomTypeId, String type, Double keyMoney, int qty, List<Reservation> reservation) {
+        this.roomTypeId = roomTypeId;
+        this.type = type;
+        this.keyMoney = keyMoney;
+        this.qty = qty;
+        this.reservation = reservation;
+    }
+
     @Override
     public String toString() {
         return "Room{" +
@@ -34,6 +42,7 @@ public class Room {
                 ", type='" + type + '\'' +
                 ", keyMoney=" + keyMoney +
                 ", qty=" + qty +
+                ", reservation=" + reservation +
                 '}';
     }
 
@@ -67,5 +76,13 @@ public class Room {
 
     public void setQty(int qty) {
         this.qty = qty;
+    }
+
+    public List<Reservation> getReservation() {
+        return reservation;
+    }
+
+    public void setReservation(List<Reservation> reservation) {
+        this.reservation = reservation;
     }
 }

@@ -7,6 +7,7 @@ import lk.ijse.dao.Custom.StudentDAO;
 import lk.ijse.dao.DAOFactory;
 import lk.ijse.dto.RoomDTO;
 import lk.ijse.dto.StudentDTO;
+import lk.ijse.entity.Reservation;
 import lk.ijse.entity.Room;
 import lk.ijse.entity.Student;
 
@@ -30,12 +31,12 @@ public class RoomBOImpl implements RoomBO {
 
     @Override
     public boolean addRooms(RoomDTO dto) throws SQLException, ClassNotFoundException, IOException {
-        return roomDAO.add(new Room(dto.getRoomTypeId(),dto.getType(),dto.getKeyMoney(),dto.getQty()));
+        return roomDAO.add(new Room(dto.getRoomTypeId(),dto.getType(),dto.getKeyMoney(),dto.getQty(), new ArrayList<Reservation>()));
     }
 
     @Override
     public boolean updateRooms(RoomDTO dto) throws SQLException, ClassNotFoundException, IOException {
-        return roomDAO.update(new Room(dto.getRoomTypeId(),dto.getType(),dto.getKeyMoney(),dto.getQty()));
+        return roomDAO.update(new Room(dto.getRoomTypeId(),dto.getType(),dto.getKeyMoney(),dto.getQty(), new ArrayList<Reservation>()));
     }
 
     @Override

@@ -6,6 +6,7 @@ public class RoomDTO {
     private Double keyMoney;
     private int qty;
 
+
     public RoomDTO() {
     }
 
