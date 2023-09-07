@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class ReservationDAOImpl implements ReservationDAO {
+
     @Override
     public List<Reservation> getAll() throws SQLException, ClassNotFoundException, IOException {
         return null;
@@ -31,6 +32,16 @@ public class ReservationDAOImpl implements ReservationDAO {
 
     @Override
     public String generateNewId() throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
+    @Override
+    public List<String> loadStudentID() {
+        return null;
+    }
+
+    @Override
+    public List<String> loadRoomID() {
         return null;
     }
 }
