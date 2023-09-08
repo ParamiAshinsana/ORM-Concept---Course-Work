@@ -141,8 +141,27 @@ public class ReservationsFormController implements Initializable {
 
     }
 
-    public void btnUpdateOnAction(ActionEvent actionEvent) {
+    public void btnUpdateOnAction(ActionEvent actionEvent) throws IOException {
+        String S_ID = String.valueOf(RstIdCBox.getValue());
+        String R_ID = String.valueOf(RrmIdCBox.getValue());
+        String date = String.valueOf(resDatePicker.getValue());
+        String status = String.valueOf(resStatusCBox.getValue());
 
+        student.setStudentId(S_ID);
+        room.setRoomTypeId(R_ID);
+
+        try {
+            reservationBO.updateReservations(new ReservationDTO(RsID,student, room, date, status));
+            new Alert(Alert.AlertType.CONFIRMATION, "Reservation Updated !").show();
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR, "SQL Error !").show();
+        }
+        getAll();
+        txtResvId.setText("");
+        RstIdCBox.setValue("");
+        RrmIdCBox.setValue("");
+        resStatusCBox.setValue("");
+        resDatePicker.setValue(null);
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
