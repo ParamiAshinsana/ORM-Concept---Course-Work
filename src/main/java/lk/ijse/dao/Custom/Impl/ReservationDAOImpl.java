@@ -16,12 +16,24 @@ public class ReservationDAOImpl implements ReservationDAO {
 
     @Override
     public List<Reservation> getAll() throws SQLException, ClassNotFoundException, IOException {
-        return null;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        NativeQuery nativeQuery = session.createNativeQuery("SELECT * FROM Reservation");
+        nativeQuery.addEntity(Reservation.class);
+        List<Reservation> nReservations = nativeQuery.getResultList();
+        transaction.commit();
+        session.close();
+        return nReservations;
     }
 
     @Override
     public boolean add(Reservation entity) throws SQLException, ClassNotFoundException, IOException {
-        return false;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        session.persist(entity);
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override

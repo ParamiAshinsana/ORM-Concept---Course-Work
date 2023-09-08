@@ -5,10 +5,13 @@ import lk.ijse.bo.Custom.RoomBO;
 import lk.ijse.dao.Custom.ReservationDAO;
 import lk.ijse.dao.DAOFactory;
 import lk.ijse.dto.ReservationDTO;
+import lk.ijse.dto.RoomDTO;
 import lk.ijse.entity.Reservation;
+import lk.ijse.entity.Room;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReservationBOImpl implements ReservationBO{
@@ -16,7 +19,12 @@ public class ReservationBOImpl implements ReservationBO{
 
     @Override
     public List<ReservationDTO> getAllReservations() throws SQLException, ClassNotFoundException, IOException {
-        return null;
+        List<ReservationDTO> allreservations= new ArrayList<>();
+        List<Reservation> all = reservationDAO.getAll();
+        for (Reservation rs : all) {
+            allreservations.add(new ReservationDTO(rs.getReservationId(),rs.getStudent(),rs.getRoom(),rs.getDate(),rs.getStatus()));
+        }
+        return allreservations;
     }
 
     @Override
