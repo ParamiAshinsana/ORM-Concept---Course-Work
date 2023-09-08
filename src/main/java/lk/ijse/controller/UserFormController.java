@@ -9,8 +9,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
-public class HomeFormController {
+public class UserFormController {
     public AnchorPane rootHome;
+    public JFXTextField txtUserID;
     public JFXTextField txtUsName;
     public JFXTextField txtEmail;
     public JFXPasswordField txtpassword;
@@ -24,6 +25,7 @@ public class HomeFormController {
     public TableColumn colUsName;
     public TableColumn colPassword;
     public TableColumn colEmail;
+
 
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
