@@ -34,7 +34,7 @@ public class ReservationBOImpl implements ReservationBO{
 
     @Override
     public boolean updateReservations(ReservationDTO dto) throws SQLException, ClassNotFoundException, IOException {
-        return false;
+        return reservationDAO.update(new Reservation(dto.getReservationId(),dto.getStudent(),dto.getRoom(),dto.getDate(),dto.getStatus()));
     }
 
     @Override
