@@ -71,6 +71,7 @@ public class ReservationsFormController implements Initializable {
         resStatusCBox.setItems(statusBox);
     }
 
+    @SneakyThrows
     private void getAll() throws IOException {
         resvTbl.getItems().clear();
         try {
@@ -152,8 +153,19 @@ public class ReservationsFormController implements Initializable {
         resDatePicker.setValue(null);
     }
 
-    public void btnDeleteOnAction(ActionEvent actionEvent) {
-
+    public void btnDeleteOnAction(ActionEvent actionEvent) throws IOException {
+        try {
+            reservationBO.deleteReservations(RsID);
+            new Alert(Alert.AlertType.CONFIRMATION, "Reservation Deleted !").show();
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR, "SQL Error !").show();
+        }
+        txtResvId.setText("");
+        RstIdCBox.setValue("");
+        RrmIdCBox.setValue("");
+        resStatusCBox.setValue("");
+        resDatePicker.setValue(null);
+        getAll();
     }
 
     public void RstIdCBoxOnAction(ActionEvent actionEvent) {

@@ -3,6 +3,7 @@ package lk.ijse.dao.Custom.Impl;
 import lk.ijse.dao.Custom.ReservationDAO;
 import lk.ijse.dao.Custom.RoomDAO;
 import lk.ijse.entity.Reservation;
+import lk.ijse.entity.Room;
 import lk.ijse.util.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -43,7 +44,17 @@ public class ReservationDAOImpl implements ReservationDAO {
 
     @Override
     public boolean delete(String id) throws SQLException, ClassNotFoundException, IOException {
-        return false;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        String sql = "DELETE FROM reservation WHERE reservationId = :rSId";
+        NativeQuery<Reservation> nativeQuery = session.createNativeQuery(sql);
+        nativeQuery.setParameter("rSId",id);
+        nativeQuery.executeUpdate();
+
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override

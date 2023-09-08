@@ -39,6 +39,6 @@ public class ReservationBOImpl implements ReservationBO{
 
     @Override
     public boolean deleteReservations(String id) throws SQLException, ClassNotFoundException, IOException {
-        return false;
+        return reservationDAO.delete(id);
     }
 }
