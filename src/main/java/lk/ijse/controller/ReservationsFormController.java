@@ -187,14 +187,6 @@ public class ReservationsFormController implements Initializable {
         getAll();
     }
 
-    public void RstIdCBoxOnAction(ActionEvent actionEvent) {
-
-    }
-
-    public void RrmIdCBoxOnAction(ActionEvent actionEvent) {
-
-    }
-
     public void resvTblOnClicked(MouseEvent mouseEvent) {
         Integer index = resvTbl.getSelectionModel().getSelectedIndex();
         if (index <= -1) {
