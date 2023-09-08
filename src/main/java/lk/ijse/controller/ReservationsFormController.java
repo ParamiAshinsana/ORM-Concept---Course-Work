@@ -131,6 +131,12 @@ public class ReservationsFormController implements Initializable {
         } else {
             new Alert(Alert.AlertType.ERROR, "Error!!").show();
         }
+        getAll();
+        txtResvId.setText("");
+        RstIdCBox.setValue("");
+        RrmIdCBox.setValue("");
+        resStatusCBox.setValue("");
+        resDatePicker.setValue(null);
 
     }
 
@@ -139,7 +145,11 @@ public class ReservationsFormController implements Initializable {
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
-
+        txtResvId.setText("");
+        RstIdCBox.setValue("");
+        RrmIdCBox.setValue("");
+        resStatusCBox.setValue("");
+        resDatePicker.setValue(null);
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
