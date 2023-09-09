@@ -198,4 +198,12 @@ public class ReservationsFormController implements Initializable {
         resDatePicker.setValue(LocalDate.parse(colDate.getCellData(index).toString()));
         resStatusCBox.setValue(colStatus.getCellData(index).toString());
     }
+
+    public void RstIdCBoxOnAction(ActionEvent actionEvent) {
+
+    }
+
+    public void RrmIdCBoxOnAction(ActionEvent actionEvent) {
+
+    }
 }
