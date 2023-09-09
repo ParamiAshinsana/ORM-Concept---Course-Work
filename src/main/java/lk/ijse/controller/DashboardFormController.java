@@ -1,7 +1,6 @@
 package lk.ijse.controller;
 
 import com.jfoenix.controls.JFXButton;
-import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,7 +9,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 import java.io.IOException;
 
@@ -32,7 +30,7 @@ public class DashboardFormController {
 
     public void btnHomeOnAction(ActionEvent actionEvent) throws IOException {
         controllarea.setVisible(true);
-        Parent fxml = FXMLLoader.load(getClass().getResource("/view/home_form.fxml"));
+        Parent fxml = FXMLLoader.load(getClass().getResource("/view/user_form.fxml"));
         controllarea.getChildren().removeAll();
         controllarea.getChildren().setAll(fxml);
     }
