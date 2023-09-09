@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.layout.AnchorPane?>
-
-
-<AnchorPane fx:id="rootHome" prefHeight="660.0" prefWidth="1145.0" style="-fx-background-color: green;" styleClass="StakePane" stylesheets="@../css/stylesheet_css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.HomeFormController">
-
-</AnchorPane>
