@@ -8,6 +8,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.bo.BOFactory;
@@ -24,7 +25,7 @@ import java.util.ResourceBundle;
 
 public class UserFormController implements Initializable {
     UserBO userBO = (UserBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.B_USER);
-
+    String usId;
 
     public AnchorPane rootHome;
 //    public JFXTextField txtUserID;
@@ -89,6 +90,20 @@ public class UserFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         generateNextUserId();
+        setCellValueFactory();
+        getAll();
+    }
+
+    @SneakyThrows
+    private void getAll() {
+
+    }
+
+    private void setCellValueFactory() {
+        colUsID.setCellValueFactory(new PropertyValueFactory<>("usId"));
+        colUsName.setCellValueFactory(new PropertyValueFactory<>("usName"));
+        colUsPassword.setCellValueFactory(new PropertyValueFactory<>("usPassword"));
+        colUsEmail.setCellValueFactory(new PropertyValueFactory<>("usEmail"));
     }
 
     private void generateNextUserId() throws ClassNotFoundException {
