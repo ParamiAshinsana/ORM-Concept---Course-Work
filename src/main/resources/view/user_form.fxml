@@ -86,9 +86,10 @@
       </Button>
       <TableView fx:id="userTbl" layoutX="30.0" layoutY="399.0" onMouseClicked="#userTblOnClicked" prefHeight="239.0" prefWidth="1090.0">
         <columns>
-          <TableColumn fx:id="colUsName" prefWidth="331.0" text="User Name" />
-          <TableColumn fx:id="colPassword" prefWidth="329.0" text="Password" />
-            <TableColumn fx:id="colEmail" prefWidth="417.0" text="User Email" />
+          <TableColumn fx:id="colUsID" prefWidth="161.0" text="User ID" />
+          <TableColumn fx:id="colUsName" prefWidth="307.0" text="User Name" />
+            <TableColumn fx:id="colUsPassword" prefWidth="293.0" text="Password" />
+            <TableColumn fx:id="colUsEmail" prefWidth="325.0" text="User Email" />
         </columns>
       </TableView>
       <JFXTextField fx:id="userIdTxt" disable="true" layoutX="211.0" layoutY="91.0" prefHeight="29.0" prefWidth="226.0" promptText="User Id" />

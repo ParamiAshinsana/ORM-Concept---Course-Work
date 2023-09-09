@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -12,6 +13,8 @@ import javafx.scene.layout.AnchorPane;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.Custom.StudentBO;
 import lk.ijse.bo.Custom.UserBO;
+import lk.ijse.dto.StudentDTO;
+import lk.ijse.dto.UserDTO;
 import lombok.SneakyThrows;
 
 import java.io.IOException;
@@ -24,7 +27,7 @@ public class UserFormController implements Initializable {
 
 
     public AnchorPane rootHome;
-    public JFXTextField txtUserID;
+//    public JFXTextField txtUserID;
     public JFXTextField txtUsName;
     public JFXTextField txtEmail;
     public JFXPasswordField txtpassword;
@@ -36,14 +39,34 @@ public class UserFormController implements Initializable {
     public Button btnDelete;
 
     public TableView userTbl;
+    public TableColumn colUsID;
     public TableColumn colUsName;
-    public TableColumn colPassword;
-    public TableColumn colEmail;
+    public TableColumn colUsPassword;
+    public TableColumn colUsEmail;
+//    public TableColumn colUsName;
+//    public TableColumn colPassword;
+//    public TableColumn colEmail;
 
 
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
+        String usId = userIdTxt.getText();
+        String usName = txtUsName.getText();
+        String usPassword = txtpassword.getText();
+        String usEmail = txtEmail.getText();
 
+        try {
+            userBO.addUsers(new UserDTO(usId,usName,usPassword,usEmail));
+            new Alert(Alert.AlertType.CONFIRMATION, "User Saved !").show();
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR, "SQL Error !").show();
+        }
+
+
+        userIdTxt.setText("");
+        txtUsName.setText("");
+        txtpassword.setText("");
+        txtEmail.setText("");
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
