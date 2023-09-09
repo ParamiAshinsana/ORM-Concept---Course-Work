@@ -91,6 +91,6 @@
             <TableColumn fx:id="colEmail" prefWidth="417.0" text="User Email" />
         </columns>
       </TableView>
-      <JFXTextField fx:id="txtUserID" disable="true" layoutX="473.0" layoutY="105.0" prefHeight="29.0" prefWidth="242.0" promptText="User ID" />
+      <JFXTextField fx:id="userIdTxt" disable="true" layoutX="211.0" layoutY="91.0" prefHeight="29.0" prefWidth="226.0" promptText="User Id" />
    </children>
 </AnchorPane>
