@@ -84,15 +84,15 @@
             <ColorAdjust brightness="-1.0" contrast="1.0" hue="1.0" saturation="1.0" />
          </effect>
       </Label>
-      <JFXTextField fx:id="txtFieldStudentId" layoutX="173.0" layoutY="130.0" prefHeight="29.0" prefWidth="184.0" style="-fx-background-color: white;" />
-      <JFXTextField fx:id="txtFieldStudentName" layoutX="580.0" layoutY="133.0" prefHeight="29.0" prefWidth="218.0" style="-fx-background-color: white;" />
+      <JFXTextField fx:id="txtFieldStudentId" layoutX="173.0" layoutY="130.0" onKeyReleased="#studentIdOnKeyReleased" prefHeight="29.0" prefWidth="184.0" style="-fx-background-color: white;" />
+      <JFXTextField fx:id="txtFieldStudentName" layoutX="580.0" layoutY="133.0" onKeyReleased="#studentNameOnKeyReleased" prefHeight="29.0" prefWidth="218.0" style="-fx-background-color: white;" />
       <ComboBox fx:id="CBoxgender" layoutX="959.0" layoutY="143.0" prefWidth="150.0">
          <effect>
             <DropShadow color="#0073ff" height="24.11" radius="12.3325" width="27.22" />
          </effect>
       </ComboBox>
-      <JFXTextField fx:id="txtFieldAddress" layoutX="156.0" layoutY="213.0" style="-fx-background-color: white;" />
-      <JFXTextField fx:id="txtContact" layoutX="463.0" layoutY="217.0" style="-fx-background-color: white;" />
+      <JFXTextField fx:id="txtFieldAddress" layoutX="156.0" layoutY="213.0" onKeyReleased="#studentAddressOnKeyReleased" style="-fx-background-color: white;" />
+      <JFXTextField fx:id="txtContact" layoutX="463.0" layoutY="217.0" onKeyReleased="#studentContactOnKeyReleased" prefHeight="29.0" prefWidth="203.0" style="-fx-background-color: white;" />
       <DatePicker fx:id="datePickerDob" layoutX="855.0" layoutY="220.0" style="-fx-background-color: black;">
          <effect>
             <DropShadow color="#0073ff" height="33.44" radius="23.2175" spread="0.07" width="61.43" />
