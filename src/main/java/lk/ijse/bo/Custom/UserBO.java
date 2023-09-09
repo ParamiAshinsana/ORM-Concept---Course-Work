@@ -17,5 +17,5 @@ public interface UserBO extends SuperBO {
 
     public boolean deleteUsers(UserDTO id) throws SQLException, ClassNotFoundException, IOException;
 
-    public String generateNewUsersID() throws SQLException, ClassNotFoundException;
+    public String generateNewUsersID() throws SQLException, ClassNotFoundException, IOException;
 }
