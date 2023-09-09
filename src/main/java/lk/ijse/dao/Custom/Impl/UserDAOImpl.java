@@ -3,6 +3,10 @@ package lk.ijse.dao.Custom.Impl;
 import lk.ijse.dao.Custom.StudentDAO;
 import lk.ijse.dao.Custom.UserDAO;
 import lk.ijse.entity.User;
+import lk.ijse.util.FactoryConfiguration;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.NativeQuery;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -16,7 +20,12 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean add(User entity) throws SQLException, ClassNotFoundException, IOException {
-        return false;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        session.persist(entity);
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override
@@ -30,7 +39,51 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public String generateNewId() throws SQLException, ClassNotFoundException {
-        return null;
+    public String generateNewId() throws SQLException, ClassNotFoundException, IOException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        NativeQuery<String> nativeQuery = session.createNativeQuery("SELECT usId FROM User ORDER BY usId DESC LIMIT 1");
+        String id = nativeQuery.uniqueResult();
+        transaction.commit();
+        session.close();
+
+        if(id != null){
+            String[] strings = id.split("U0");
+            int newID = Integer.parseInt(strings[1]);
+            newID++;
+            String ID = String.valueOf(newID);
+            int length = ID.length();
+            if (length < 2){
+                return "U00"+newID;
+            }else {
+                if (length < 3){
+                    return "U0"+newID;
+                }else {
+                    return "U"+newID;
+                }
+            }
+        }else {
+            return "U001";
+        }
+    }
+
+    @Override
+    public boolean checkPassword(String username, String password) throws IOException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        NativeQuery<String> nativeQuery = session.createNativeQuery("SELECT usPassword FROM user WHERE usName = :username");
+        nativeQuery.setParameter("username",username);
+
+        String pass = nativeQuery.uniqueResult();
+
+        transaction.commit();
+        session.close();
+
+        if (password.equalsIgnoreCase(pass)) {
+            return true;
+        }else {
+            return false;
+        }
     }
 }
