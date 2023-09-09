@@ -16,11 +16,14 @@ import lk.ijse.bo.Custom.StudentBO;
 import lk.ijse.bo.Custom.UserBO;
 import lk.ijse.dto.StudentDTO;
 import lk.ijse.dto.UserDTO;
+import lk.ijse.dto.tm.StudentTM;
+import lk.ijse.dto.tm.UserTM;
 import lombok.SneakyThrows;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class UserFormController implements Initializable {
@@ -39,11 +42,11 @@ public class UserFormController implements Initializable {
     public Button btnClear;
     public Button btnDelete;
 
-    public TableView userTbl;
-    public TableColumn colUsID;
-    public TableColumn colUsName;
-    public TableColumn colUsPassword;
-    public TableColumn colUsEmail;
+    public TableView <UserTM> userTbl;
+    public TableColumn <? , ?> colUsID;
+    public TableColumn <? , ?> colUsName;
+    public TableColumn <? , ?> colUsPassword;
+    public TableColumn <? , ?> colUsEmail;
 //    public TableColumn colUsName;
 //    public TableColumn colPassword;
 //    public TableColumn colEmail;
@@ -96,7 +99,18 @@ public class UserFormController implements Initializable {
 
     @SneakyThrows
     private void getAll() {
+        userTbl.getItems().clear();
+        try {
+            List<UserDTO> allusers = userBO.getAllUsers();
 
+            for (UserDTO u : allusers) {
+                userTbl.getItems().add(new UserTM(u.getUsId(),u.getUsName(),u.getUsPassword(),u.getUsEmail()));
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
     }
 
     private void setCellValueFactory() {

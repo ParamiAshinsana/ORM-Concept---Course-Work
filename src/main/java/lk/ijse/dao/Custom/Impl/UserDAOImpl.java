@@ -2,6 +2,7 @@ package lk.ijse.dao.Custom.Impl;
 
 import lk.ijse.dao.Custom.StudentDAO;
 import lk.ijse.dao.Custom.UserDAO;
+import lk.ijse.entity.Student;
 import lk.ijse.entity.User;
 import lk.ijse.util.FactoryConfiguration;
 import org.hibernate.Session;
@@ -15,7 +16,14 @@ import java.util.List;
 public class UserDAOImpl implements UserDAO {
     @Override
     public List<User> getAll() throws SQLException, ClassNotFoundException, IOException {
-        return null;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        NativeQuery nativeQuery = session.createNativeQuery("SELECT * FROM User");
+        nativeQuery.addEntity(User.class);
+        List nUsers = nativeQuery.getResultList();
+        transaction.commit();
+        session.close();
+        return nUsers;
     }
 
     @Override

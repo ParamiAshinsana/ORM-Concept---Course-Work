@@ -4,6 +4,7 @@ import lk.ijse.bo.Custom.UserBO;
 import lk.ijse.dao.Custom.StudentDAO;
 import lk.ijse.dao.Custom.UserDAO;
 import lk.ijse.dao.DAOFactory;
+import lk.ijse.dto.StudentDTO;
 import lk.ijse.dto.UserDTO;
 import lk.ijse.entity.Reservation;
 import lk.ijse.entity.Student;
@@ -20,7 +21,12 @@ public class UserBOImpl implements UserBO {
 
     @Override
     public List<UserDTO> getAllUsers() throws SQLException, ClassNotFoundException, IOException {
-        return null;
+        List<UserDTO> allusers= new ArrayList<>();
+        List<User> all = userDAO.getAll();
+        for (User u : all) {
+            allusers.add(new UserDTO(u.getUsId(),u.getUsName(),u.getUsPassword(),u.getUsEmail()));
+        }
+        return allusers;
     }
 
     @Override
