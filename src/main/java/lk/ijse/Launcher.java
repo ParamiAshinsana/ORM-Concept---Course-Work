@@ -26,6 +26,5 @@ public class Launcher extends Application {
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene);
         stage.show();
-
     }
 }
