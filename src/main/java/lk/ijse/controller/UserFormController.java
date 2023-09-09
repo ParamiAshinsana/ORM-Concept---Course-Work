@@ -23,6 +23,7 @@ import lombok.SneakyThrows;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -86,7 +87,16 @@ public class UserFormController implements Initializable {
     }
 
     public void userTblOnClicked(MouseEvent mouseEvent) {
+        Integer index = userTbl.getSelectionModel().getSelectedIndex();
+        if (index <= -1) {
+            return;
+        }
+//      System.out.println(">>>>> "+index);
 
+        usId = colUsID.getCellData(index).toString();
+        txtUsName.setText(colUsName.getCellData(index).toString());
+        txtpassword.setText(colUsPassword.getCellData(index).toString());
+        txtEmail.setText(colUsEmail.getCellData(index).toString());
     }
 
     @SneakyThrows
