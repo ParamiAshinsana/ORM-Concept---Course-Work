@@ -1,6 +1,11 @@
 package lk.ijse.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class User {
+    @Id
     private String usId;
     private String usName;
     private String usPassword;
