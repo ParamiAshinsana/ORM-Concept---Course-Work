@@ -12,24 +12,20 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.bo.BOFactory;
-import lk.ijse.bo.Custom.StudentBO;
 import lk.ijse.bo.Custom.UserBO;
-import lk.ijse.dto.StudentDTO;
 import lk.ijse.dto.UserDTO;
-import lk.ijse.dto.tm.StudentTM;
 import lk.ijse.dto.tm.UserTM;
 import lombok.SneakyThrows;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class UserFormController implements Initializable {
     UserBO userBO = (UserBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.B_USER);
-    String usId;
+    String ussId;
 
     public AnchorPane rootHome;
 //    public JFXTextField txtUserID;
@@ -80,7 +76,7 @@ public class UserFormController implements Initializable {
         String usEmail = txtEmail.getText();
 
         try {
-            userBO.updateUsers(new UserDTO(usId,usName,usPassword,usEmail));
+            userBO.updateUsers(new UserDTO(ussId,usName,usPassword,usEmail));
             new Alert(Alert.AlertType.CONFIRMATION, "User Updated !").show();
         }catch (Exception e){
             new Alert(Alert.AlertType.ERROR, "SQL Error !").show();
@@ -100,7 +96,12 @@ public class UserFormController implements Initializable {
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
-
+        try {
+            userBO.deleteUsers(ussId);
+            new Alert(Alert.AlertType.CONFIRMATION, "User Deleted !").show();
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR, "SQL Error !").show();
+        }
     }
 
     public void userTblOnClicked(MouseEvent mouseEvent) {
@@ -110,7 +111,7 @@ public class UserFormController implements Initializable {
         }
 //      System.out.println(">>>>> "+index);
 
-        usId = colUsID.getCellData(index).toString();
+        ussId = colUsID.getCellData(index).toString();
         txtUsName.setText(colUsName.getCellData(index).toString());
         txtpassword.setText(colUsPassword.getCellData(index).toString());
         txtEmail.setText(colUsEmail.getCellData(index).toString());

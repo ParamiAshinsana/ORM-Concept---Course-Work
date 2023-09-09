@@ -40,8 +40,8 @@ public class UserBOImpl implements UserBO {
     }
 
     @Override
-    public boolean deleteUsers(UserDTO id) throws SQLException, ClassNotFoundException, IOException {
-        return false;
+    public boolean deleteUsers(String id) throws SQLException, ClassNotFoundException, IOException {
+        return userDAO.delete(id);
     }
 
     @Override

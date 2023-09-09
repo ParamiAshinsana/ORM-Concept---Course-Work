@@ -48,7 +48,17 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean delete(String id) throws SQLException, ClassNotFoundException, IOException {
-        return false;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        String sql = "DELETE FROM user WHERE usId = :uId";
+        NativeQuery<User> nativeQuery = session.createNativeQuery(sql);
+        nativeQuery.setParameter("uId",id);
+        nativeQuery.executeUpdate();
+
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override
