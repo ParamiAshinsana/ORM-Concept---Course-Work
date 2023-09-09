@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.bo.BOFactory;
@@ -14,6 +15,8 @@ import lk.ijse.bo.Custom.StudentBO;
 import lk.ijse.dto.StudentDTO;
 import lk.ijse.dto.tm.StudentTM;
 import lk.ijse.entity.Student;
+import lk.ijse.regx.Regex;
+import lk.ijse.regx.TextFilds;
 import lombok.SneakyThrows;
 
 import java.io.IOException;
@@ -89,6 +92,11 @@ public class StudentsFormController implements Initializable {
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) throws SQLException{
+        if(!isValidated()){
+            new Alert(Alert.AlertType.ERROR, "Invalid Input !").show();
+            return;
+        }
+
         String studentId = txtFieldStudentId.getText();
         String studentName = txtFieldStudentName.getText();
         String address = txtFieldAddress.getText();
@@ -172,5 +180,27 @@ public class StudentsFormController implements Initializable {
         txtContact.setText(colContact.getCellData(index).toString());
         datePickerDob.setValue(LocalDate.parse(colDob.getCellData(index).toString()));
         CBoxgender.setValue(colGender.getCellData(index).toString());
+    }
+
+    public void studentIdOnKeyReleased(KeyEvent keyEvent) {
+
+    }
+
+    public void studentNameOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFilds.NAME , txtFieldStudentName);
+    }
+
+    public void studentAddressOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFilds.ADDRESS , txtFieldAddress);
+    }
+
+    public void studentContactOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFilds.PHONE ,txtContact);
+    }
+    public boolean isValidated(){
+        if (!Regex.setTextColor(TextFilds.NAME,txtFieldStudentName))return false;
+        if (!Regex.setTextColor(TextFilds.ADDRESS,txtFieldAddress))return false;
+        if (!Regex.setTextColor(TextFilds.PHONE,txtContact))return false;
+        return true;
     }
 }
