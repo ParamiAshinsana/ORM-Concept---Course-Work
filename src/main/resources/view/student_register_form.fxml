@@ -23,11 +23,11 @@
             <DropShadow />
          </effect>
       </Label>
-      <PasswordField fx:id="txtPassword" layoutX="213.0" layoutY="286.0" prefHeight="51.0" prefWidth="335.0" promptText="Password" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" />
-      <JFXTextField fx:id="txtUser" layoutX="216.0" layoutY="197.0" prefHeight="51.0" prefWidth="335.0" promptText="User Name" style="-fx-background-color: white;" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" />
-      <JFXButton layoutX="188.0" layoutY="405.0" onAction="#BtnRegisterOnAction" prefHeight="53.0" prefWidth="163.0" style="-fx-background-color: white;" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" text="Register" textFill="#74b9ff">
+      <PasswordField fx:id="txtPassword" layoutX="210.0" layoutY="260.0" prefHeight="36.0" prefWidth="335.0" promptText="Password" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" />
+      <JFXTextField fx:id="txtUser" layoutX="216.0" layoutY="193.0" prefHeight="36.0" prefWidth="335.0" promptText="User Name" style="-fx-background-color: white;" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" />
+      <JFXButton layoutX="188.0" layoutY="405.0" onAction="#BtnRegisterOnAction" prefHeight="17.0" prefWidth="116.0" style="-fx-background-color: white;" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" text="Register" textFill="#74b9ff">
          <font>
-            <Font name="Arial Bold Italic" size="29.0" />
+            <Font name="Arial Bold Italic" size="19.0" />
          </font>
       </JFXButton>
       <ImageView fitHeight="53.0" fitWidth="63.0" layoutX="463.0" layoutY="406.0" onMouseClicked="#backOnMouseClicked" pickOnBounds="true" preserveRatio="true">
@@ -38,5 +38,7 @@
             <Glow level="1.0" />
          </effect>
       </ImageView>
+      <JFXTextField fx:id="txtEmail" layoutX="205.0" layoutY="312.0" prefHeight="36.0" prefWidth="348.0" promptText="Email" style="-fx-background-color: white;" styleClass="TextFiled" stylesheets="@../css/stylesheet_css.css" />
+      <JFXTextField fx:id="userIdTxt" disable="true" layoutX="232.0" layoutY="148.0" promptText="User Id" />
    </children>
 </AnchorPane>
