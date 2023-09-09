@@ -67,7 +67,15 @@ public class RoomDAOImpl implements RoomDAO {
     }
 
     @Override
-    public void updateRoomsQuantity() {
+    public void updateRoomsQuantity() throws IOException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
 
+        String sql = "UPDATE room SET qty = (qty - 1)";
+        NativeQuery<Room> nativeQuery = session.createNativeQuery(sql);
+        nativeQuery.executeUpdate();
+
+        transaction.commit();
+        session.close();
     }
 }
