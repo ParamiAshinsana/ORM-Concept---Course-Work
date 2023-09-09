@@ -75,11 +75,28 @@ public class UserFormController implements Initializable {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+        String usName = txtUsName.getText();
+        String usPassword = txtpassword.getText();
+        String usEmail = txtEmail.getText();
 
+        try {
+            userBO.updateUsers(new UserDTO(usId,usName,usPassword,usEmail));
+            new Alert(Alert.AlertType.CONFIRMATION, "User Updated !").show();
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR, "SQL Error !").show();
+        }
+        userIdTxt.setText("");
+        txtUsName.setText("");
+        txtpassword.setText("");
+        txtEmail.setText("");
+        getAll();
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
-
+        userIdTxt.setText("");
+        txtUsName.setText("");
+        txtpassword.setText("");
+        txtEmail.setText("");
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
